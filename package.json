@@ -6,16 +6,32 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "gql:gen": "graphql-codegen --config app/ui/content/codegen.ts"
   },
   "dependencies": {
+    "@graphql-codegen/cli": "^5.0.5",
+    "@graphql-codegen/typescript": "^4.1.6",
+    "@graphql-codegen/typescript-graphql-request": "^6.2.0",
+    "@graphql-codegen/typescript-operations": "^4.6.0",
     "@headlessui/react": "^2.2.1",
     "@heroicons/react": "^2.2.0",
+    "@playwright/test": "^1.51.1",
+    "@types/eslint": "^9.6.1",
+    "@vercel/analytics": "^1.5.0",
     "clsx": "^2.1.1",
+    "eslint": "^9.24.0",
+    "eslint-config-prettier": "^10.1.2",
     "framer-motion": "^12.7.3",
+    "get-graphql-schema": "^2.1.2",
+    "graphql": "^16.10.0",
+    "graphql-request": "^7.1.2",
+    "graphql-tag": "^2.12.6",
     "next": "15.3.0",
+    "prettier": "^3.5.3",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "vitest": "^3.1.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

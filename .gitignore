@@ -23,6 +23,7 @@
 # misc
 .DS_Store
 *.pem
+app/ui/content/lib/generated/gql
 
 # debug
 npm-debug.log*
