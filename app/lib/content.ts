@@ -1,5 +1,5 @@
 import request from "graphql-request";
-import type { GetHeroQuery } from "../ui/content/lib/generated/gql/types";
+import { GetHeroQuery } from "@/app/ui/content/lib/generated/gql/types";
 import { heroQuery } from "../ui/content/lib/gql";
 
 const HYGRAPH_API_ENDPOINT =

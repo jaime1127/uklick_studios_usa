@@ -1,7 +1,5 @@
 import { Suspense } from "react";
-import { ArrowLeftIcon } from "@heroicons/react/24/outline";
 import { Metadata } from "next";
-import Link from "next/link";
 import Calendly from "@/app/ui/book/Calendly";
 
 export const metadata: Metadata = {

@@ -1,7 +1,8 @@
 import Image from "next/image";
+import Link from "next/link";
 
 interface HeroProps {
-  blog?: string;
+  blog?: string | undefined;
   heading?: string;
   description?: string;
   link?: {
@@ -28,14 +29,14 @@ export default function Hero({
           <div className="mx-auto max-w-lg lg:mx-0">
             <div className="hidden sm:mt-32 sm:flex lg:mt-16">
               <div className="relative rounded-full px-3 py-1 text-sm/6 text-gray-500 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
-                <a
+                <Link
                   href="/aboutus"
                   className="whitespace-nowrap font-semibold text-indigo-600"
                 >
                   <span className="absolute inset-0" aria-hidden="true"></span>
                   <span aria-hidden="true">&rarr;</span>
                   {blog}
-                </a>
+                </Link>
               </div>
             </div>
             <h1 className="mt-24 text-pretty text-5xl font-semibold tracking-tight text-gray-900 sm:mt-10 sm:text-7xl">
@@ -45,12 +46,12 @@ export default function Hero({
               {description}
             </p>
             <div className="mt-10 flex items-center gap-x-6">
-              <a
+              <Link
                 href={link.anchor}
                 className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
                 {link.label}
-              </a>
+              </Link>
             </div>
           </div>
         </div>
