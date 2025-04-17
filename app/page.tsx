@@ -1,7 +1,7 @@
 import Hero from "@/app/ui/content/lib/Hero/Hero";
 import CTA from "@/app/ui/content/lib/CTA/CTA";
 import { fetchHeroData } from "@/app/lib/content";
-import type { GetHeroQuery } from "../app/ui/content/lib/generated/gql/types";
+import type { GetHeroQuery } from "@/app/ui/content/lib/generated/gql/types";
 
 const hero = (await fetchHeroData("home-page")) as GetHeroQuery;
 

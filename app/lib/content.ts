@@ -1,6 +1,6 @@
 import request from "graphql-request";
 import { GetHeroQuery } from "@/app/ui/content/lib/generated/gql/types";
-import { heroQuery } from "../ui/content/lib/gql";
+import { heroQuery } from "@/app/ui/content/lib/gql";
 
 const HYGRAPH_API_ENDPOINT =
   process.env.HYGRAPH_API_ENDPOINT || "https://default-endpoint.com";
