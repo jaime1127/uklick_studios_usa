@@ -4,10 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
+    "gql:gen": "graphql-codegen --config app/ui/content/codegen.ts",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "gql:gen": "graphql-codegen --config app/ui/content/codegen.ts"
+    "lint": "next lint"
   },
   "dependencies": {
     "@graphql-codegen/cli": "^5.0.5",
