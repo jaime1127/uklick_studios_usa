@@ -25,7 +25,7 @@ export default function Hero({
   asset = { url: "", alt: "" },
 }: HeroProps) {
   return (
-    <div className="relative bg-white">
+    <div className="absolute justify-self-center">
       <div className="mx-auto max-w-7xl lg:grid lg:grid-cols-12 lg:gap-x-8 lg:px-8">
         <div className="px-6 lg:col-span-7 lg:px-0 xl:col-span-6">
           <div className="mx-auto max-w-lg lg:mx-0">
@@ -33,7 +33,7 @@ export default function Hero({
               <div className="relative rounded-full px-3 py-1 text-sm/6 text-gray-500 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
                 <Link
                   href="/aboutus"
-                  className="whitespace-nowrap font-semibold text-indigo-600"
+                  className="whitespace-nowrap font-semibold text-gray-200"
                 >
                   <span className="absolute inset-0" aria-hidden="true"></span>
                   <span aria-hidden="true">&rarr;</span>
@@ -41,10 +41,10 @@ export default function Hero({
                 </Link>
               </div>
             </div>
-            <h1 className="mt-24 text-pretty text-5xl font-semibold tracking-tight text-gray-900 sm:mt-10 sm:text-7xl">
+            <h1 className="text-pretty text-5xl font-semibold tracking-tight text-gray-50 sm:mt-10 sm:text-7xl">
               {heading}
             </h1>
-            <p className="mt-8 text-pretty text-lg font-medium text-gray-500 sm:text-xl/8">
+            <p className="mt-8 text-pretty text-lg font-medium text-gray-200 sm:text-xl/8">
               {description}
             </p>
             <div className="mt-10 flex items-center gap-x-6">
@@ -57,15 +57,7 @@ export default function Hero({
             </div>
           </div>
         </div>
-        <div className="relative lg:col-span-5 lg:-mr-8 xl:absolute xl:inset-0 xl:left-1/2 xl:mr-0 content-center">
-          <Image
-            src={asset.url}
-            alt={asset.alt}
-            width={1000}
-            height={760}
-            loading="lazy"
-          />
-        </div>
+       
       </div>
     </div>
   );
