@@ -9,14 +9,11 @@ export const metadata: Metadata = {
 export default async function Page() {
   return (
     <main>
-      <h1 className="mb-4 text-xl md:text-2xl">Book Session</h1>
-      <Calendly />
-      {/* <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        <Suspense></Suspense>
+      <div className="grid grid-rows-[20px_1fr_20px] min-h-screen gap-16 sm:px-20 font-[family-name:var(--font-geist-sans)]">
+        <main className="flex flex-col gap-[32px] row-start-2">
+          <Calendly />
+        </main>
       </div>
-      <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-4 lg:grid-cols-8">
-        <Suspense></Suspense>
-      </div> */}
     </main>
   );
 }
