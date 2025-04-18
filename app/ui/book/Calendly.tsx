@@ -16,7 +16,7 @@ export default function Calendly() {
 
   return (
     <div
-      className="calendly-inline-widget m-16 h-screen"
+      className="calendly-inline-widget h-screen"
       data-url="https://calendly.com/pfjaime"
     ></div>
   );
