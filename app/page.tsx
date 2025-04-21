@@ -8,9 +8,9 @@ const hero = (await fetchHeroData("home-page")) as GetHeroQuery;
 
 export default function Home() {
   return (
-    <div>
-      <div className="grid grid-rows-[20px_1fr_20px] min-h-screen gap-16 sm:px-20 font-[family-name:var(--font-geist-sans)]">
-        <main className="flex flex-col gap-[32px] row-start-2 items-center">
+    <div className="grid grid-rows-[20px_1fr_20px] min-h-screen gap-16 sm:px-20 font-[family-name:var(--font-geist-sans)]">
+      <main className="flex flex-col gap-[32px] row-start-2 items-center">
+        <div>
           <Video />
           <Hero
             blog={hero.hero?.blog || ""}
@@ -25,8 +25,8 @@ export default function Home() {
               alt: hero.hero?.asset?.alt || "",
             }}
           />
-        </main>
-      </div>
+        </div>
+      </main>
     </div>
   );
 }

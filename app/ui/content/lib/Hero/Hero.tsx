@@ -25,40 +25,34 @@ export default function Hero({
   asset = { url: "", alt: "" },
 }: HeroProps) {
   return (
-    <div className="absolute justify-self-center">
-      <div className="mx-auto max-w-7xl lg:grid lg:grid-cols-12 lg:gap-x-8 lg:px-8">
-        <div className="px-6 lg:col-span-7 lg:px-0 xl:col-span-6">
-          <div className="mx-auto max-w-lg lg:mx-0">
-            <div className="hidden sm:mt-32 sm:flex lg:mt-16">
-              <div className="relative rounded-full px-3 py-1 text-sm/6 text-gray-500 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
-                <Link
-                  href="/aboutus"
-                  className="whitespace-nowrap font-semibold text-gray-200"
-                >
-                  <span className="absolute inset-0" aria-hidden="true"></span>
-                  <span aria-hidden="true">&rarr;</span>
-                  {blog}
-                </Link>
-              </div>
-            </div>
-            <h1 className="text-pretty text-5xl font-semibold tracking-tight text-gray-50 sm:mt-10 sm:text-7xl">
-              {heading}
-            </h1>
-            <p className="mt-8 text-pretty text-lg font-medium text-gray-200 sm:text-xl/8">
-              {description}
-            </p>
-            <div className="mt-10 flex items-center gap-x-6">
-              <Link
-                href={link.anchor}
-                className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-              >
-                {link.label}
-              </Link>
-            </div>
-          </div>
-        </div>
-       
+    <div className="flex flex-col sm:flex-row items-center py-4">
+      <div className="flex flex-col items-center gap-8 text-center">
+        <Link
+          href="/aboutus"
+          className="whitespace-nowrap font-semibold text-gray-900"
+        >
+          {blog}
+        </Link>
+        <h1 className="text-pretty text-5xl font-semibold tracking-tight text-gray-900 sm:text-6xl">
+          {heading}
+        </h1>
+        <p className="text-pretty text-lg font-medium text-gray-900 sm:text-xl/8">
+          {description}
+        </p>
+        <Link
+          href={link.anchor}
+          className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+        >
+          {link.label}
+        </Link>
       </div>
+      <Image
+        src={asset.url}
+        alt={asset.alt}
+        width={800}
+        height={800}
+        loading="lazy"
+      />
     </div>
   );
 }

@@ -10,12 +10,6 @@ export default async function Video() {
       >
         <source src="vidCamera.mp4" type="video/mp4" />
       </video>
-      {/* <img
-        className="absolute md:w-3/4 lg:w-1/2"
-        loading="lazy"
-        src="images/logo/infamous.png"
-        alt="logo overlay"
-      /> */}
     </section>
   );
 }
