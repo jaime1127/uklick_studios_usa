@@ -1,4 +1,4 @@
-export default async function Video() {
+export default function Video() {
   return (
     <section className="flex items-center justify-center min-h-lvh">
       <video

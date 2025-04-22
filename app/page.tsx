@@ -11,7 +11,6 @@ export default function Home() {
     <div className="grid grid-rows-[20px_1fr_20px] min-h-screen gap-16 sm:px-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-[32px] row-start-2 items-center">
         <div>
-          <Video />
           <Hero
             blog={hero.hero?.blog || ""}
             heading={hero.hero?.heading || ""}
@@ -20,10 +19,7 @@ export default function Home() {
               anchor: hero.hero?.link?.anchor || "",
               label: hero.hero?.link?.label || "",
             }}
-            asset={{
-              url: hero.hero?.asset?.url || "",
-              alt: hero.hero?.asset?.alt || "",
-            }}
+            video
           />
         </div>
       </main>
