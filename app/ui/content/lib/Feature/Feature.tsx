@@ -1,59 +1,59 @@
-"use client"; // Mark this file as a Client Component
+const files = [
+  {
+    title: "IMG_4985.HEIC",
+    size: "3.9 MB",
+    source:
+      "https://images.unsplash.com/photo-1582053433976-25c00369fc93?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=512&q=80",
+  },
+  {
+    title: "IMG_4985.HEIe",
+    size: "3.9 MB",
+    source:
+      "https://images.unsplash.com/photo-1614926857083-7be149266cda?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=512&q=80",
+  },
+  {
+    title: "IMG_4985.HEIv",
+    size: "3.9 MB",
+    source:
+      "https://images.unsplash.com/photo-1614705827065-62c3dc488f40?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=512&q=80",
+  },
+  {
+    title: "IMG_4985.HEIbn",
+    size: "3.9 MB",
+    source:
+      "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=512&q=80",
+  },
+];
 
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
-
-export default function Feature() {
+export default function Example() {
   return (
-    <div className="p-6">
-      <Swiper
-        modules={[Pagination]}
-        spaceBetween={50}
-        slidesPerView={3}
-        navigation
-        pagination={true}
-        scrollbar={{ draggable: true }}
-        onSwiper={(swiper) => console.log(swiper)}
-        onSlideChange={() => console.log("slide change")}
-      >
-        <div className="p-2">
-          <SwiperSlide>
-            Slide 1
+    <ul
+      role="list"
+      className="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8 pt-4 pb-4"
+    >
+      {files.map((file) => (
+        <li key={file.source} className="relative">
+          <div className="group overflow-hidden rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100">
             <img
               alt=""
-              src="https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2102&q=80"
+              src={file.source}
+              className="pointer-events-none aspect-10/7 object-cover group-hover:opacity-75"
             />
-          </SwiperSlide>
-          <SwiperSlide>
-            Slide 2
-            <img
-              alt=""
-              src="https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2102&q=80"
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            Slide 3
-            <img
-              alt=""
-              src="https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2102&q=80"
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            Slide 4
-            <img
-              alt=""
-              src="https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2102&q=80"
-            />
-          </SwiperSlide>
-        </div>
-      </Swiper>
-    </div>
+            <button
+              type="button"
+              className="absolute inset-0 focus:outline-hidden"
+            >
+              <span className="sr-only">View details for {file.title}</span>
+            </button>
+          </div>
+          <p className="pointer-events-none mt-2 block truncate text-sm font-medium text-gray-900">
+            {file.title}
+          </p>
+          <p className="pointer-events-none block text-sm font-medium text-gray-500">
+            {file.size}
+          </p>
+        </li>
+      ))}
+    </ul>
   );
 }

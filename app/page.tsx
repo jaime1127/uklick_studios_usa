@@ -3,6 +3,7 @@ import { fetchHeroData } from "@/app/lib/content";
 
 import Hero from "@/app/ui/content/lib/Hero/Hero";
 import Feature from "./ui/content/lib/Feature/Feature";
+import Carousel from "./ui/content/lib/Carousel/Carousel";
 
 const hero = (await fetchHeroData("home-page")) as GetHeroQuery;
 
@@ -23,6 +24,7 @@ export default function Home() {
         }}
         video
       />
+      <Carousel />
       <Feature />
     </main>
   );
