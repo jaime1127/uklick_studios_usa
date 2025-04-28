@@ -28,12 +28,7 @@ export default function Hero({
   video = false,
 }: HeroProps) {
   return (
-    <div className="flex flex-col sm:flex-row items-center py-4">
-      {video && (
-        <div className="absolute inset-0 -z-10">
-          <Video />
-        </div>
-      )}
+    <div className="items-center py-4 min-h-screen justify-items-center">
       <div className="flex flex-col items-center gap-8 text-center z-10">
         <Link
           href="/aboutus"
@@ -53,17 +48,20 @@ export default function Hero({
         >
           {link.label}
         </Link>
-      </div>
-      {asset.url && (
-        <div className="z-10 mt-8">
+        {asset.url && (
           <Image
             src={asset.url}
             alt={asset.alt || "Hero Image"}
-             width={800}
-            height={800}
+            width={400}
+            height={400}
             loading="lazy"
             className="rounded-lg"
           />
+        )}
+      </div>
+      {video && (
+        <div className="absolute inset-0 -z-10">
+          <Video />
         </div>
       )}
     </div>

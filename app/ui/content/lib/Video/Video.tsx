@@ -2,7 +2,7 @@ export default function Video() {
   return (
     <section className="flex items-center justify-center min-h-lvh">
       <video
-        className="absolute top-0 left-0 w-full h-full min-h-lvh object-cover"
+        className="absolute top-0 left-0 w-full h-full min-h-max object-cover"
         autoPlay
         loop
         muted

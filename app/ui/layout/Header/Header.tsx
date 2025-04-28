@@ -15,7 +15,7 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="absolute top-0 left-0 w-full z-10 bg-transparent">
+    <header className="relative w-full z-10 bg-transparent">
       <nav
         aria-label="Global"
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
@@ -52,7 +52,10 @@ export default function Header() {
           ))}
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="/" className="text-sm/6 font-semibold text-white hover:text-gray-300">
+          <a
+            href="/"
+            className="text-sm/6 font-semibold text-white hover:text-gray-300"
+          >
             Log in <span aria-hidden="true">&rarr;</span>
           </a>
         </div>
