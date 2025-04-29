@@ -1,15 +1,13 @@
 export default function Video() {
   return (
-    <section className="flex items-center justify-center min-h-lvh">
-      <video
-        className="absolute top-0 left-0 w-full h-full min-h-max object-cover"
-        autoPlay
-        loop
-        muted
-        playsInline
-      >
-        <source src="vidCamera.mp4" type="video/mp4" />
-      </video>
-    </section>
+    <video
+      className="absolute inset-0 w-full h-full object-cover -z-10"
+      autoPlay
+      loop
+      muted
+      playsInline
+    >
+      <source src="vidCamera.mp4" type="video/mp4" />
+    </video>
   );
 }

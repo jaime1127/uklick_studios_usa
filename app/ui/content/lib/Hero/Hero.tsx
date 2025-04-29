@@ -28,8 +28,8 @@ export default function Hero({
   video = false,
 }: HeroProps) {
   return (
-    <div className="items-center py-4 min-h-screen justify-items-center">
-      <div className="flex flex-col items-center gap-8 text-center z-10">
+    <div className="items-center py-4 min-h-lvh w-full text-center">
+      <div className="flex flex-col items-center gap-8">
         <Link
           href="/aboutus"
           className="whitespace-nowrap font-semibold text-[#999DA0]"
@@ -50,7 +50,7 @@ export default function Hero({
         </Link>
         {asset.url && (
           <Image
-            src={asset.url}
+            src="/image0.png"
             alt={asset.alt || "Hero Image"}
             width={400}
             height={400}
@@ -58,12 +58,8 @@ export default function Hero({
             className="rounded-lg"
           />
         )}
+        {video && <Video />}
       </div>
-      {video && (
-        <div className="absolute inset-0 -z-10">
-          <Video />
-        </div>
-      )}
     </div>
   );
 }

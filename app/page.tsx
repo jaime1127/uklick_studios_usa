@@ -24,7 +24,10 @@ export default function Home() {
         }}
         video
       />
-      <Carousel />
+        <div className="mt-0"> {/* Explicitly remove margin */}
+        <Carousel />
+      </div>
+      {/* <Carousel /> */}
       <Feature />
     </main>
   );
