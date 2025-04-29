@@ -28,8 +28,9 @@ export default function Hero({
   video = false,
 }: HeroProps) {
   return (
-    <div className="items-center py-4 min-h-lvh w-full text-center">
-      <div className="flex flex-col items-center gap-8">
+    <div className="w-full h-screen overflow-hidden">
+      {video && <Video />}
+      <div className="absolute inset-0 flex flex-col items-center justify-center gap-8 z-10 text-center">
         <Link
           href="/aboutus"
           className="whitespace-nowrap font-semibold text-[#999DA0]"
@@ -50,10 +51,10 @@ export default function Hero({
         </Link>
         {asset.url && (
           <Image
-            src="/image0.png"
+            src={asset.url}
             alt={asset.alt || "Hero Image"}
-            width={400}
-            height={400}
+            width={350}
+            height={350}
             loading="lazy"
             className="rounded-lg"
           />
