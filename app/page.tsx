@@ -8,6 +8,7 @@ import Carousel from "./ui/content/lib/Carousel/Carousel";
 const hero = (await fetchHeroData("home-page")) as GetHeroQuery;
 
 export default function Home() {
+  console.log(hero);
   return (
     <main className="mx-auto max-w-7xl">
       <Hero
@@ -23,6 +24,14 @@ export default function Home() {
           alt: hero.hero?.asset?.alt || "",
         }}
         video
+        videoAsset={{
+          asset: {
+            url: hero.hero?.videoAsset?.asset?.url || "",
+            alt: "",
+            size: 0,
+            handle: "",
+          },
+        }}
       />
 
       <Carousel />

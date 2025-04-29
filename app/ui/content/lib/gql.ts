@@ -27,6 +27,14 @@ export const heroQuery = gql`
         alt
         __typename
       }
+      videoAsset {
+        asset {
+          alt
+          size
+          url
+          handle
+        }
+      }
     }
   }
 `;

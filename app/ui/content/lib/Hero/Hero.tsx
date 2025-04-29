@@ -17,6 +17,14 @@ interface HeroProps {
     alt: string;
   };
   video?: boolean;
+  videoAsset?: {
+    asset: {
+      alt: string;
+      size: number;
+      url: string;
+      handle: string;
+    };
+  };
 }
 
 export default function Hero({
@@ -26,10 +34,27 @@ export default function Hero({
   link = { anchor: "", label: "" },
   asset = { url: "", alt: "" },
   video = false,
+  videoAsset = {
+    asset: {
+      alt: "",
+      size: 0,
+      url: "",
+      handle: "",
+    },
+  },
 }: HeroProps) {
+  console.log("Hero Props:", {
+    blog,
+    heading,
+    description,
+    link,
+    asset,
+    video,
+    videoAsset,
+  });
   return (
     <div className="w-full h-screen overflow-hidden">
-      {video && <Video />}
+      {video && <Video videoAsset={videoAsset} />}
       <div className="absolute inset-0 flex flex-col items-center justify-center gap-8 z-10 text-center">
         <Link
           href="/aboutus"
@@ -59,7 +84,6 @@ export default function Hero({
             className="rounded-lg"
           />
         )}
-        {video && <Video />}
       </div>
     </div>
   );
