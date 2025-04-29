@@ -43,15 +43,6 @@ export default function Hero({
     },
   },
 }: HeroProps) {
-  console.log("Hero Props:", {
-    blog,
-    heading,
-    description,
-    link,
-    asset,
-    video,
-    videoAsset,
-  });
   return (
     <div className="w-full h-screen overflow-hidden">
       {video && <Video videoAsset={videoAsset} />}

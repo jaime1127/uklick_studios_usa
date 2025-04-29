@@ -29,7 +29,7 @@ export default function Video({
       muted
       playsInline
     >
-      <source src={videoAsset.asset?.url || ''} type="video/mp4" />
+      <source src={videoAsset.asset?.url || ""} type="video/mp4" />
     </video>
   );
 }
