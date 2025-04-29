@@ -31,7 +31,7 @@ export default function Feature() {
     }
   };
   return (
-    <div className="px-6">
+    <div className="p-6">
       <Swiper
         spaceBetween={30}
         effect={"coverflow"}
@@ -89,7 +89,7 @@ export default function Feature() {
           align-items: center;
           justify-content: center;
           font-weight: bold;
-          color: var(--swiper-theme-color);
+          color: #999DA0;
         }
 
         .autoplay-progress svg {
@@ -101,7 +101,7 @@ export default function Feature() {
           width: 100%;
           height: 100%;
           stroke-width: 4px;
-          stroke: var(--swiper-theme-color);
+          stroke: #999DA0;
           fill: none;
           stroke-dashoffset: calc(125.6px * (1 - var(--progress)));
           stroke-dasharray: 125.6;

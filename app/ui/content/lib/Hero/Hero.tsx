@@ -1,5 +1,7 @@
 "use client";
 
+import { ArrowLongRightIcon } from "@heroicons/react/24/outline";
+
 import Image from "next/image";
 import Link from "next/link";
 import Video from "../Video/Video";
@@ -49,9 +51,10 @@ export default function Hero({
       <div className="absolute inset-0 flex flex-col items-center justify-center gap-8 z-10 text-center">
         <Link
           href="/aboutus"
-          className="whitespace-nowrap font-semibold text-[#999DA0]"
+          className="whitespace-nowrap font-semibold text-[#999DA0] flex gap-1.5"
         >
           {blog}
+          <ArrowLongRightIcon className="h-6 w-6 text-[#999DA0]" />
         </Link>
         <h1 className="text-pretty text-5xl font-semibold tracking-tight text-gray-50 sm:text-6xl">
           {heading}
