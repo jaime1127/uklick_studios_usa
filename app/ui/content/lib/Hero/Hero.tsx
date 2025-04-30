@@ -46,7 +46,7 @@ export default function Hero({
   },
 }: HeroProps) {
   return (
-    <div className="w-full h-screen overflow-hidden">
+    <div className="w-full h-lvh overflow-hidden">
       {video && <Video videoAsset={videoAsset} />}
       <div className="absolute inset-0 flex flex-col items-center justify-center gap-8 z-10 text-center">
         <Link
@@ -72,8 +72,8 @@ export default function Hero({
           <Image
             src={asset.url}
             alt={asset.alt || "Hero Image"}
-            width={350}
-            height={350}
+            width={300}
+            height={300}
             loading="lazy"
             className="rounded-lg"
           />
