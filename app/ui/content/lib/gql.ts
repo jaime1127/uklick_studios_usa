@@ -38,3 +38,26 @@ export const heroQuery = gql`
     }
   }
 `;
+
+export const carouselQuery = gql`
+  query getCarousel($slug: String!) {
+    carousel(where: { slug: $slug }) {
+      id
+      slides {
+        slug
+        image {
+          id
+          alt
+          fileName
+          size
+          mimeType
+          url
+          width
+          height
+          handle
+          __typename
+        }
+      }
+    }
+  }
+`;

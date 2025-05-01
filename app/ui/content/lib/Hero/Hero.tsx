@@ -46,7 +46,7 @@ export default function Hero({
   },
 }: HeroProps) {
   return (
-    <div className="w-full h-lvh overflow-hidden">
+    <div className="w-full min-h-lvh">
       <div className="absolute inset-0 flex flex-col items-center justify-center gap-8 z-10 text-center">
         {video && <Video videoAsset={videoAsset} />}
         <Link

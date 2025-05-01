@@ -1,14 +1,19 @@
-import type { GetHeroQuery } from "@/app/ui/content/lib/generated/gql/types";
-import { fetchHeroData } from "@/app/lib/content";
+import type {
+  GetCarouselQuery,
+  GetHeroQuery,
+} from "@/app/ui/content/lib/generated/gql/types";
+import { fetchCarouselData, fetchHeroData } from "@/app/lib/content";
 
 import Hero from "@/app/ui/content/lib/Hero/Hero";
 import Feature from "./ui/content/lib/Feature/Feature";
 import Carousel from "./ui/content/lib/Carousel/Carousel";
 
 const hero = (await fetchHeroData("home-page")) as GetHeroQuery;
+const carousel = (await fetchCarouselData(
+  "home-page-carousel"
+)) as GetCarouselQuery;
 
 export default function Home() {
-  console.log(hero);
   return (
     <main className="mx-auto max-w-7xl">
       <Hero
@@ -34,7 +39,14 @@ export default function Home() {
         }}
       />
 
-      <Carousel />
+      <Carousel
+        slides={
+          carousel.carousel?.slides?.map((slide) => ({
+            src: slide.image?.url || "",
+            alt: slide.image?.alt || "",
+          })) || []
+        }
+      />
 
       <Feature />
     </main>

@@ -8,15 +8,25 @@ import {
   Pagination,
   Autoplay,
 } from "swiper/modules";
+import { useRef } from "react";
+
+import Image from "next/image";
 
 // Import Swiper styles
 import "swiper/css";
-import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
-import { useRef } from "react";
 
-export default function Feature() {
+interface SwiperProps {
+  slides?: Array<{
+    src?: string;
+    alt?: string;
+  }>;
+}
+
+export default function Carousel({
+  slides = [{ src: "", alt: "" }],
+}: SwiperProps) {
   const progressCircle = useRef<SVGSVGElement | null>(null);
   const progressContent = useRef<HTMLSpanElement | null>(null);
   const onAutoplayTimeLeft = (s: any, time: number, progress: number) => {
@@ -33,43 +43,29 @@ export default function Feature() {
   return (
     <div className="p-6">
       <Swiper
-        spaceBetween={30}
+        spaceBetween={50}
         effect={"coverflow"}
         autoplay={{
-          delay: 5500,
+          delay: 55500,
           disableOnInteraction: false,
         }}
-        navigation={true}
         pagination={{
           clickable: true,
         }}
         modules={[EffectCoverflow, Navigation, Pagination, Autoplay]}
         onAutoplayTimeLeft={onAutoplayTimeLeft}
       >
-        <SwiperSlide>
-          <img
-            alt=""
-            src="https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2102&q=80"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            alt=""
-            src="https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2102&q=80"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            alt=""
-            src="https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2102&q=80"
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            alt=""
-            src="https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2102&q=80"
-          />
-        </SwiperSlide>
+        {slides.map((slide: { src?: string; alt?: string }) => (
+          <SwiperSlide>
+            <Image
+              src={slide.src || ""}
+              alt={slide.alt || "Hero Image"}
+              width={700}
+              height={200}
+              loading="lazy"
+            />
+          </SwiperSlide>
+        ))}
         <div className="autoplay-progress" slot="container-end">
           <svg viewBox="0 0 48 48" ref={progressCircle}>
             <circle cx="24" cy="24" r="20"></circle>
@@ -89,7 +85,7 @@ export default function Feature() {
           align-items: center;
           justify-content: center;
           font-weight: bold;
-          color: #999DA0;
+          color: #999da0;
         }
 
         .autoplay-progress svg {
@@ -101,7 +97,7 @@ export default function Feature() {
           width: 100%;
           height: 100%;
           stroke-width: 4px;
-          stroke: #999DA0;
+          stroke: #999da0;
           fill: none;
           stroke-dashoffset: calc(125.6px * (1 - var(--progress)));
           stroke-dasharray: 125.6;
