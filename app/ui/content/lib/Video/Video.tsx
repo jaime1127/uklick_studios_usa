@@ -23,7 +23,7 @@ export default function Video({
 }: VideoProps) {
   return (
     <video
-      className="absolute inset-0 w-full h-full object-cover -z-10"
+      className="absolute inset-0 w-full h-lvh object-cover -z-10"
       autoPlay
       loop
       muted

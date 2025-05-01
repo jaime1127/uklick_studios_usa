@@ -46,9 +46,9 @@ export default function Hero({
   },
 }: HeroProps) {
   return (
-    <div className="w-full min-h-lvh">
-      <div className="absolute inset-0 flex flex-col items-center justify-center gap-8 z-10 text-center">
+    <div className="w-full h-lvh">
         {video && <Video videoAsset={videoAsset} />}
+      <div className="absolute inset-0 flex flex-col items-center justify-center gap-8 z-10 text-center h-lvh">
         <Link
           href="/aboutus"
           className="whitespace-nowrap font-semibold text-[#999DA0] flex gap-1.5"
