@@ -7,6 +7,7 @@ import { fetchCarouselData, fetchHeroData } from "@/app/lib/content";
 import Hero from "@/app/ui/content/lib/Hero/Hero";
 import Feature from "./ui/content/lib/Feature/Feature";
 import Carousel from "./ui/content/lib/Carousel/Carousel";
+import CTA from './ui/content/lib/CTA/CTA';
 
 const hero = (await fetchHeroData("home-page")) as GetHeroQuery;
 const carousel = (await fetchCarouselData(
@@ -48,7 +49,7 @@ export default function Home() {
         }
       />
 
-      <Feature />
+      <CTA />
     </main>
   );
 }

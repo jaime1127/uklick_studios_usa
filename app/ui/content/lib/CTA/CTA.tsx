@@ -1,62 +1,61 @@
 export default function Example() {
-    return (
-      <div className="overflow-hidden bg-white py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:flex lg:px-8">
-          <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 lg:mx-0 lg:max-w-none lg:min-w-full lg:flex-none lg:gap-y-8">
-            <div className="lg:col-end-1 lg:w-full lg:max-w-lg lg:pb-8">
-              <h2 className="text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">Our people</h2>
-              <p className="mt-6 text-xl/8 text-gray-600">
-                Quasi est quaerat. Sit molestiae et. Provident ad dolorem occaecati eos iste. Soluta rerum quidem minus ut
-                molestiae velit error quod. Excepturi quidem expedita molestias quas.
-              </p>
-              <p className="mt-6 text-base/7 text-gray-600">
-                Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
-                fugiat veniam occaecat fugiat. Quasi aperiam sit non sit neque reprehenderit.
-              </p>
-              <div className="mt-10 flex">
-                <a
-                  href="#"
-                  className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                >
-                  Join our team <span aria-hidden="true">&rarr;</span>
-                </a>
-              </div>
-            </div>
-            <div className="flex flex-wrap items-start justify-end gap-6 sm:gap-8 lg:contents">
-              <div className="w-0 flex-auto lg:ml-auto lg:w-auto lg:flex-none lg:self-end">
-                <img
-                  alt=""
-                  src="https://images.unsplash.com/photo-1670272502246-768d249768ca?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1152&q=80"
-                  className="aspect-7/5 w-[37rem] max-w-none rounded-2xl bg-gray-50 object-cover"
-                />
-              </div>
-              <div className="contents lg:col-span-2 lg:col-end-2 lg:ml-auto lg:flex lg:w-[37rem] lg:items-start lg:justify-end lg:gap-x-8">
-                <div className="order-first flex w-64 flex-none justify-end self-end lg:w-auto">
-                  <img
-                    alt=""
-                    src="https://images.unsplash.com/photo-1605656816944-971cd5c1407f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=768&h=604&q=80"
-                    className="aspect-4/3 w-[24rem] max-w-none flex-none rounded-2xl bg-gray-50 object-cover"
-                  />
-                </div>
-                <div className="flex w-96 flex-auto justify-end lg:w-auto lg:flex-none">
-                  <img
-                    alt=""
-                    src="https://images.unsplash.com/photo-1568992687947-868a62a9f521?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1152&h=842&q=80"
-                    className="aspect-7/5 w-[37rem] max-w-none flex-none rounded-2xl bg-gray-50 object-cover"
-                  />
-                </div>
-                <div className="hidden sm:block sm:w-0 sm:flex-auto lg:w-auto lg:flex-none">
-                  <img
-                    alt=""
-                    src="https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=768&h=604&q=80"
-                    className="aspect-4/3 w-[24rem] max-w-none rounded-2xl bg-gray-50 object-cover"
-                  />
-                </div>
-              </div>
-            </div>
+  return (
+    <div className="relative bg-gray-600 mt-4 mb-4">
+      <div className="relative h-80 overflow-hidden bg-indigo-600 md:absolute md:left-0 md:h-full md:w-1/3 lg:w-1/2">
+        <img
+          alt=""
+          src="https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1920&q=60&blend=6366F1&sat=-100&blend-mode=multiply"
+          className="size-full object-cover"
+        />
+        <svg
+          viewBox="0 0 926 676"
+          aria-hidden="true"
+          className="absolute -bottom-24 left-24 w-[57.875rem] transform-gpu blur-[118px]"
+        >
+          <path
+            d="m254.325 516.708-90.89 158.331L0 436.427l254.325 80.281 163.691-285.15c1.048 131.759 36.144 345.144 168.149 144.613C751.171 125.508 707.17-93.823 826.603 41.15c95.546 107.978 104.766 294.048 97.432 373.585L685.481 297.694l16.974 360.474-448.13-141.46Z"
+            fill="url(#60c3c621-93e0-4a09-a0e6-4c228a0116d8)"
+            fillOpacity=".4"
+          />
+          <defs>
+            <linearGradient
+              id="60c3c621-93e0-4a09-a0e6-4c228a0116d8"
+              x1="926.392"
+              x2="-109.635"
+              y1=".176"
+              y2="321.024"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stopColor="#776FFF" />
+              <stop offset={1} stopColor="#FF4694" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <div className="relative mx-auto max-w-7xl py-24 sm:py-32 lg:px-8 lg:py-40">
+        <div className="pr-6 pl-6 md:ml-auto md:w-2/3 md:pl-16 lg:w-1/2 lg:pr-0 lg:pl-24 xl:pl-32">
+          <h2 className="text-base/7 font-semibold text-indigo-400">
+          Celebrate Your Baby's First Year
+          </h2>
+          <p className="mt-2 text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+          1-Year-Old Cake Smash Sessions
+          </p>
+          <p className="mt-6 text-base/7 text-gray-300">
+            Make your baby's first birthday unforgettable with a fun and
+            creative cake smash session. Capture the joy, laughter, and messy
+            moments as your little one dives into their first cake. Let us help
+            you preserve these precious memories forever.
+          </p>
+          <div className="mt-8">
+            <a
+              href="/book"
+              className="inline-flex rounded-md bg-white/10 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-white/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+            >
+              Book Your Session Now
+            </a>
           </div>
         </div>
       </div>
-    )
-  }
-  
+    </div>
+  );
+}
