@@ -11,6 +11,7 @@ import {
 import { useRef } from "react";
 
 import Image from "next/image";
+import Link from "next/link";
 
 // Import Swiper styles
 import "swiper/css";
@@ -41,14 +42,30 @@ export default function Carousel({
     }
   };
   return (
-    <div className="p-6">
+    <div className="pt-6">
+      <div className="text-center mb-8">
+        <h2 className="text-4xl font-bold text-gray-800">
+          Celebrate the Beauty of Motherhood
+        </h2>
+        <p className="text-lg text-gray-600 mt-2">
+          Capture timeless moments with our exclusive maternity photography
+          sessions. Let us help you preserve these precious memories forever.
+        </p>
+        <Link
+          href="/book"
+          className="whitespace-nowrap font-semibold text-[#999DA0] flex gap-1.5 justify-center"
+        >
+          Learn more
+        </Link>
+      </div>
       <Swiper
-        spaceBetween={50}
-        effect={"coverflow"}
+        spaceBetween={30}
         autoplay={{
-          delay: 55500,
+          delay: 5000,
           disableOnInteraction: false,
         }}
+        slidesPerView={1}
+        loop={true}
         pagination={{
           clickable: true,
         }}
@@ -56,13 +73,14 @@ export default function Carousel({
         onAutoplayTimeLeft={onAutoplayTimeLeft}
       >
         {slides.map((slide: { src?: string; alt?: string }) => (
-          <SwiperSlide>
+          <SwiperSlide className="justify-items-center" key={slide.src}>
             <Image
               src={slide.src || ""}
               alt={slide.alt || "Hero Image"}
               width={700}
-              height={200}
+              height={400}
               loading="lazy"
+              className="rounded-lg"
             />
           </SwiperSlide>
         ))}
