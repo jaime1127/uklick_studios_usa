@@ -61,3 +61,18 @@ export const carouselQuery = gql`
     }
   }
 `;
+
+export const promoQuery = gql`
+  query getPromo($slug: String!) {
+    promo(where: { slug: $slug }) {
+      slug
+      heading
+      eyebrow
+      description
+      image {
+        alt
+        url
+      }
+    }
+  }
+`;

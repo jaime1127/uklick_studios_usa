@@ -1,20 +1,28 @@
 import type {
   GetCarouselQuery,
   GetHeroQuery,
+  GetPromoQuery,
 } from "@/app/ui/content/lib/generated/gql/types";
-import { fetchCarouselData, fetchHeroData } from "@/app/lib/content";
+import {
+  fetchCarouselData,
+  fetchHeroData,
+  fetchPromoData,
+} from "@/app/lib/content";
 
 import Hero from "@/app/ui/content/lib/Hero/Hero";
-import Feature from "./ui/content/lib/Feature/Feature";
 import Carousel from "./ui/content/lib/Carousel/Carousel";
-import CTA from './ui/content/lib/CTA/CTA';
+import Promo from "./ui/content/lib/Promo/Promo";
 
 const hero = (await fetchHeroData("home-page")) as GetHeroQuery;
+
 const carousel = (await fetchCarouselData(
   "home-page-carousel"
 )) as GetCarouselQuery;
 
+const promo = (await fetchPromoData("home-page-promo")) as GetPromoQuery;
+
 export default function Home() {
+  console.log(promo);
   return (
     <main className="mx-auto max-w-7xl">
       <Hero
@@ -49,7 +57,15 @@ export default function Home() {
         }
       />
 
-      <CTA />
+      <Promo
+        heading={promo.promo?.heading || ""}
+        description={promo.promo?.description || ""}
+        eyebrow={promo.promo?.eyebrow || ""}
+        image={{
+          alt: promo.promo?.image?.alt || "",
+          url: promo.promo?.image?.url || "",
+        }}
+      />
     </main>
   );
 }

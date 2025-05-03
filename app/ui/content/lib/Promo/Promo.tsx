@@ -1,10 +1,25 @@
-export default function Example() {
+interface PromoProps {
+  heading?: string;
+  description?: string;
+  eyebrow?: string;
+  image?: {
+    url: string;
+    alt: string;
+  };
+}
+
+export default function Promo({
+  heading = "",
+  description = "",
+  eyebrow = "",
+  image = { url: "", alt: "" },
+}: PromoProps) {
   return (
     <div className="relative bg-gray-600 mt-4 mb-4">
       <div className="relative h-80 overflow-hidden bg-indigo-600 md:absolute md:left-0 md:h-full md:w-1/3 lg:w-1/2">
         <img
-          alt=""
-          src="https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1920&q=60&blend=6366F1&sat=-100&blend-mode=multiply"
+          alt={image.alt}
+          src={image.url}
           className="size-full object-cover"
         />
         <svg
@@ -35,17 +50,12 @@ export default function Example() {
       <div className="relative mx-auto max-w-7xl py-24 sm:py-32 lg:px-8 lg:py-40">
         <div className="pr-6 pl-6 md:ml-auto md:w-2/3 md:pl-16 lg:w-1/2 lg:pr-0 lg:pl-24 xl:pl-32">
           <h2 className="text-base/7 font-semibold text-indigo-400">
-          Celebrate Your Baby's First Year
+            {eyebrow}
           </h2>
           <p className="mt-2 text-4xl font-semibold tracking-tight text-white sm:text-5xl">
-          1-Year-Old Cake Smash Sessions
+            {heading}
           </p>
-          <p className="mt-6 text-base/7 text-gray-300">
-            Make your baby's first birthday unforgettable with a fun and
-            creative cake smash session. Capture the joy, laughter, and messy
-            moments as your little one dives into their first cake. Let us help
-            you preserve these precious memories forever.
-          </p>
+          <p className="mt-6 text-base/7 text-gray-300">{description}</p>
           <div className="mt-8">
             <a
               href="/book"
