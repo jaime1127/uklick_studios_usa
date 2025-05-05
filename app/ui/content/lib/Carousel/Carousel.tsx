@@ -53,7 +53,7 @@ export default function Carousel({
         </p>
         <Link
           href="/book"
-          className="whitespace-nowrap font-semibold text-[#999DA0] flex gap-1.5 justify-center"
+          className="whitespace-nowrap font-semibold text-[#999DA0] flex gap-1.5 justify-center underline hover:no-underline"
         >
           Learn more
         </Link>
@@ -77,7 +77,7 @@ export default function Carousel({
             <Image
               src={slide.src || ""}
               alt={slide.alt || "Hero Image"}
-              width={700}
+              width={550}
               height={400}
               loading="lazy"
               className="rounded-lg"

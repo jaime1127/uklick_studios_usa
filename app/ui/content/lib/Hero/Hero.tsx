@@ -52,7 +52,7 @@ export default function Hero({
         <div className="flex flex-col items-center justify-center gap-4 text-center">
             <Link
           href="/aboutus"
-          className="whitespace-nowrap font-semibold text-[#999DA0] flex gap-1.5"
+          className="whitespace-nowrap font-semibold text-[#999DA0] inline-flex gap-1.5 underline hover:no-underline"
         >
           {blog}
           <ArrowLongRightIcon className="h-6 w-6 text-[#999DA0]" />
