@@ -46,10 +46,11 @@ export default function Hero({
   },
 }: HeroProps) {
   return (
-    <div className="w-full h-lvh relative pb-6">
+    <div className="w-full h-lvh pb-6">
         {video && <Video videoAsset={videoAsset} />}
-      <div className="absolute inset-0 flex flex-col items-center justify-center gap-8 z-10 text-center h-lvh">
-        <Link
+      <div className="absolute inset-0 flex flex-col md:flex-row items-center justify-center gap-8 z-10 text-center h-lvh p-4">
+        <div className="flex flex-col items-center justify-center gap-4 text-center">
+            <Link
           href="/aboutus"
           className="whitespace-nowrap font-semibold text-[#999DA0] flex gap-1.5"
         >
@@ -68,6 +69,7 @@ export default function Hero({
         >
           {link.label}
         </Link>
+        </div>
         {asset.url && (
           <Image
             src={asset.url}
