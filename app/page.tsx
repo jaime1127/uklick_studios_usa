@@ -22,7 +22,6 @@ const carousel = (await fetchCarouselData(
 const promo = (await fetchPromoData("home-page-promo")) as GetPromoQuery;
 
 export default function Home() {
-  console.log(promo);
   return (
     <main className="mx-auto max-w-7xl">
       <Hero
