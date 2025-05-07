@@ -69,6 +69,14 @@ export default function Carousel({
         pagination={{
           clickable: true,
         }}
+        breakpoints={{
+          640: {
+            slidesPerView: 1, // Show 1 slide for screens smaller than 640px
+          },
+          768: {
+            slidesPerView: 2, // Show 2 slides for screens 768px and above
+          },
+        }}
         modules={[EffectCoverflow, Navigation, Pagination, Autoplay]}
         onAutoplayTimeLeft={onAutoplayTimeLeft}
       >

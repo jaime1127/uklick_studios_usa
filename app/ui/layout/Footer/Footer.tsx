@@ -30,7 +30,7 @@ const navigation = {
     },
     {
       name: "GitHub",
-      href: "#",
+      href: "https://github.com/jaime1127/uklick_studios_usa",
       icon: (props: React.SVGProps<SVGSVGElement>) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path

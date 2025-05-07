@@ -12,6 +12,7 @@ import {
 import Hero from "@/app/ui/content/lib/Hero/Hero";
 import Carousel from "./ui/content/lib/Carousel/Carousel";
 import Promo from "./ui/content/lib/Promo/Promo";
+import ImageList from "./ui/content/lib/Image List/ImageList";
 
 const hero = (await fetchHeroData("home-page")) as GetHeroQuery;
 
@@ -65,6 +66,8 @@ export default function Home() {
           url: promo.promo?.image?.url || "",
         }}
       />
+
+      <ImageList/>
     </main>
   );
 }
