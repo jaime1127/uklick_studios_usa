@@ -5,6 +5,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Header, Footer } from "@/app/ui/components/layout";
 import { GetLayoutQuery } from "@/app/ui/components/generated/gql/types";
 import { fetchLayoutData } from "@/app/lib/content";
+import { Analytics } from "@vercel/analytics/react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,6 +34,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Analytics />
         <Header
           image={{
             alt: layout.header?.image?.alt || "",
