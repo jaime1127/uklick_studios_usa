@@ -1,4 +1,3 @@
-import { Suspense } from "react";
 import { Metadata } from "next";
 import Calendly from "@/app/ui/book/Calendly";
 
