@@ -1,6 +1,6 @@
 import "./globals.css";
 
-import type { Metadata } from "next";
+import { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Header, Footer } from "@/app/ui/components/layout";
 import { GetLayoutQuery } from "@/app/ui/components/generated/gql/types";
@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "uKlick Studios USA",
+  title: { template: "%s | uKlick Studios USA", default: "uKlick Studios USA" },
   description: "Created by uKlick Studios USA",
 };
 

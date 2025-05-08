@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import Calendly from "@/app/ui/book/Calendly";
 
 export const metadata: Metadata = {
-  title: "Dashboard | Acme Dashboard",
+  title: "Book",
 };
 
 export default async function Page() {

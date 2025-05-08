@@ -5,7 +5,7 @@ import Link from "next/link";
 import Contact from "../ui/contact/Contact";
 
 export const metadata: Metadata = {
-  title: "About Us | About Us",
+  title: "Contact",
 };
 
 export default async function Page() {

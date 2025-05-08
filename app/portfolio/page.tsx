@@ -1,11 +1,8 @@
-import { Suspense } from "react";
-import { ArrowLeftIcon } from "@heroicons/react/24/outline";
 import { Metadata } from "next";
-import Link from "next/link";
 import Collection from "@/app/ui/components/content/Collection/Collection";
 
 export const metadata: Metadata = {
-  title: "About Us | About Us",
+  title: "Portfolio",
 };
 
 export default async function Page() {

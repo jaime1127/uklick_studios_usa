@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Login from "../ui/login/Login";
 
 export const metadata: Metadata = {
-  title: "About Us | About Us",
+  title: "Login",
 };
 
 export default async function Page() {
