@@ -1,15 +1,17 @@
 import type {
   GetCarouselQuery,
+  GetCollectionQuery,
   GetHeroQuery,
   GetPromoQuery,
 } from "@/app/ui/components/generated/gql/types";
 import {
   fetchCarouselData,
+  fetchCollectionData,
   fetchHeroData,
   fetchPromoData,
 } from "@/app/lib/content";
 
-import { Hero, Carousel, Promo, ImageList } from "@/app/ui/components/content";
+import { Hero, Carousel, Promo, Collection } from "@/app/ui/components/content";
 
 const hero = (await fetchHeroData("home-page")) as GetHeroQuery;
 
@@ -19,7 +21,12 @@ const carousel = (await fetchCarouselData(
 
 const promo = (await fetchPromoData("home-page-promo")) as GetPromoQuery;
 
+const collectionSets = (await fetchCollectionData(
+  "holiday-set"
+)) as GetCollectionQuery;
+
 export default function Home() {
+  console.log(collectionSets);
   return (
     <main className="mx-auto max-w-7xl">
       <Hero
@@ -64,7 +71,17 @@ export default function Home() {
         }}
       />
 
-      <ImageList />
+      <Collection
+        heading={collectionSets.collection?.heading || ""}
+        sets={collectionSets.collection?.sets.map((set) => ({
+          asset: {
+            url: set.image?.url || "",
+            alt: set.image?.alt || "",
+          },
+          title: set.title || "",
+          description: set.description || "",
+        }))}
+      />
     </main>
   );
 }

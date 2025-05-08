@@ -4,8 +4,14 @@ import {
   GetHeroQuery,
   GetLayoutQuery,
   GetPromoQuery,
+  GetCollectionQuery,
 } from "@/app/ui/components/generated/gql/types";
-import { carouselQuery, heroQuery, promoQuery } from "@/app/ui/components/content/gql";
+import {
+  carouselQuery,
+  collectionQuery,
+  heroQuery,
+  promoQuery,
+} from "@/app/ui/components/content/gql";
 import { layoutQuery } from "../ui/components/layout/gql";
 
 const HYGRAPH_API_ENDPOINT =
@@ -63,6 +69,20 @@ export const fetchLayoutData = async (values: string) => {
     return response;
   } catch (error) {
     console.error("Error fetching layout data:", error);
+    throw error;
+  }
+};
+
+export const fetchCollectionData = async (values: string) => {
+  try {
+    const response = await request(HYGRAPH_API_ENDPOINT, collectionQuery, <
+      GetCollectionQuery
+    >{
+      slug: values,
+    });
+    return response;
+  } catch (error) {
+    console.error("Error fetching collection data:", error);
     throw error;
   }
 };

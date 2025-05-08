@@ -76,3 +76,31 @@ export const promoQuery = gql`
     }
   }
 `;
+
+export const collectionQuery = gql`
+  query getCollection($slug: String!) {
+    collection(where: { slug: $slug }) {
+      slug
+      heading
+      sets {
+        __typename
+        stage
+        id
+        title
+        description
+        image {
+          id
+          alt
+          fileName
+          size
+          mimeType
+          url
+          width
+          height
+          handle
+          __typename
+        }
+      }
+    }
+  }
+`;
