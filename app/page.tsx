@@ -26,7 +26,6 @@ const collectionSets = (await fetchCollectionData(
 )) as GetCollectionQuery;
 
 export default function Home() {
-  console.log(collectionSets);
   return (
     <main className="mx-auto max-w-7xl">
       <Hero
