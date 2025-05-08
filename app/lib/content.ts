@@ -4,7 +4,7 @@ import {
   GetHeroQuery,
   GetLayoutQuery,
   GetPromoQuery,
-} from "@/app/ui/content/lib/generated/gql/types";
+} from "@/app/ui/components/generated/gql/types";
 import { carouselQuery, heroQuery, promoQuery } from "@/app/ui/components/content/gql";
 import { layoutQuery } from "../ui/components/layout/gql";
 

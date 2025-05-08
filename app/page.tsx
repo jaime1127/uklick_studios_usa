@@ -2,17 +2,14 @@ import type {
   GetCarouselQuery,
   GetHeroQuery,
   GetPromoQuery,
-} from "@/app/ui/content/lib/generated/gql/types";
+} from "@/app/ui/components/generated/gql/types";
 import {
   fetchCarouselData,
   fetchHeroData,
   fetchPromoData,
 } from "@/app/lib/content";
 
-import Hero from "@/app/ui/components/content/Hero/Hero";
-import Carousel from "./ui/components/content/Carousel/Carousel";
-import Promo from "./ui/components/content/Promo/Promo";
-import ImageList from "./ui/components/content/Collection/Collection";
+import { Hero, Carousel, Promo, ImageList } from "@/app/ui/components/content";
 
 const hero = (await fetchHeroData("home-page")) as GetHeroQuery;
 
@@ -67,7 +64,7 @@ export default function Home() {
         }}
       />
 
-      <ImageList/>
+      <ImageList />
     </main>
   );
 }

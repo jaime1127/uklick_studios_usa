@@ -1,9 +1,9 @@
+import "./globals.css";
+
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import Header from "@/app/ui/components/layout/Header/Header";
-import Footer from "@/app/ui/components/layout/Footer/Footer";
-import "./globals.css";
-import { GetLayoutQuery } from "./ui/content/lib/generated/gql/types";
+import { Header, Footer } from "@/app/ui/components/layout";
+import { GetLayoutQuery } from "@/app/ui/components/generated/gql/types";
 import { fetchLayoutData } from "@/app/lib/content";
 
 const geistSans = Geist({
