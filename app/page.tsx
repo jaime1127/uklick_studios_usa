@@ -9,10 +9,10 @@ import {
   fetchPromoData,
 } from "@/app/lib/content";
 
-import Hero from "@/app/ui/content/lib/Hero/Hero";
-import Carousel from "./ui/content/lib/Carousel/Carousel";
-import Promo from "./ui/content/lib/Promo/Promo";
-import ImageList from "./ui/content/lib/Image List/ImageList";
+import Hero from "@/app/ui/components/content/Hero/Hero";
+import Carousel from "./ui/components/content/Carousel/Carousel";
+import Promo from "./ui/components/content/Promo/Promo";
+import ImageList from "./ui/components/content/Collection/Collection";
 
 const hero = (await fetchHeroData("home-page")) as GetHeroQuery;
 

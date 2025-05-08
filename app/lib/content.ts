@@ -5,8 +5,8 @@ import {
   GetLayoutQuery,
   GetPromoQuery,
 } from "@/app/ui/content/lib/generated/gql/types";
-import { carouselQuery, heroQuery, promoQuery } from "@/app/ui/content/lib/gql";
-import { layoutQuery } from "../ui/layout/gql";
+import { carouselQuery, heroQuery, promoQuery } from "@/app/ui/components/content/gql";
+import { layoutQuery } from "../ui/components/layout/gql";
 
 const HYGRAPH_API_ENDPOINT =
   process.env.HYGRAPH_API_ENDPOINT || "https://default-endpoint.com";
