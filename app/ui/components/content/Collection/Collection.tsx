@@ -1,9 +1,11 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 interface CollectionProps {
   heading?: string;
+  slug: string;
   sets?: {
     asset?: {
       url?: string;
@@ -16,6 +18,7 @@ interface CollectionProps {
 
 export default function Collection({
   heading = "",
+  slug = "/",
   sets = [
     {
       asset: {
@@ -46,10 +49,10 @@ export default function Collection({
                   <p className="text-base font-semibold text-gray-900">
                     {set.title}
                   </p>{" "}
-                  <a href="">
+                  <Link href={slug}>
                     <span className="absolute inset-0" />
                     {set.description}
-                  </a>
+                  </Link>
                 </h3>
               </div>
             ))}
