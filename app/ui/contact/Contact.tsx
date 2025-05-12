@@ -34,8 +34,8 @@ export default function Example() {
               Get in touch
             </h2>
             <p className="mt-6 text-lg/8 text-gray-600">
-              Proin volutpat consequat porttitor cras nullam gravida at. Orci molestie a eu arcu. Sed ut tincidunt
-              integer elementum id sem. Arcu sed malesuada et magna.
+            Have questions or need more information? We're here to help! Reach out to us for inquiries, bookings, or anything else. 
+            We'd love to hear from you and make your experience unforgettable.
             </p>
             <dl className="mt-10 space-y-4 text-base/7 text-gray-600">
               <div className="flex gap-x-4">
@@ -44,9 +44,9 @@ export default function Example() {
                   <BuildingOffice2Icon aria-hidden="true" className="h-7 w-6 text-gray-400" />
                 </dt>
                 <dd>
-                  545 Mavis Island
+                  Preserve Neighborhood
                   <br />
-                  Chicago, IL 99191
+                  Odessa FL 33556
                 </dd>
               </div>
               <div className="flex gap-x-4">
@@ -56,7 +56,7 @@ export default function Example() {
                 </dt>
                 <dd>
                   <a href="tel:+1 (555) 234-5678" className="hover:text-gray-900">
-                    +1 (555) 234-5678
+                    +1 (813) 817-1997
                   </a>
                 </dd>
               </div>
@@ -67,7 +67,7 @@ export default function Example() {
                 </dt>
                 <dd>
                   <a href="mailto:hello@example.com" className="hover:text-gray-900">
-                    hello@example.com
+                    pfjaime@yahoo.com
                   </a>
                 </dd>
               </div>
