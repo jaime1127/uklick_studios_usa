@@ -13,19 +13,13 @@ import {
 
 import { Hero, Carousel, Promo, Collection } from "@/app/ui/components/content";
 
-const hero = (await fetchHeroData("home-page")) as GetHeroQuery;
-
-const carousel = (await fetchCarouselData(
-  "home-page-carousel"
-)) as GetCarouselQuery;
-
-const promo = (await fetchPromoData("home-page-promo")) as GetPromoQuery;
-
-const collectionSets = (await fetchCollectionData(
-  "holiday-set"
-)) as GetCollectionQuery;
-
-export default function Home() {
+export default async function Home() {
+  const [hero, carousel, promo, collectionSets] = await Promise.all([
+    fetchHeroData("home-page") as Promise<GetHeroQuery>,
+    fetchCarouselData("home-page-carousel") as Promise<GetCarouselQuery>,
+    fetchPromoData("home-page-promo") as Promise<GetPromoQuery>,
+    fetchCollectionData("holiday-set") as Promise<GetCollectionQuery>,
+  ]);
   return (
     <main className="mx-auto max-w-7xl">
       <Hero
@@ -71,6 +65,7 @@ export default function Home() {
       />
 
       <Collection
+        slug={"portfolio/" + collectionSets.collection?.slug || ""}
         heading={collectionSets.collection?.heading || ""}
         sets={collectionSets.collection?.sets.map((set) => ({
           asset: {

@@ -22,13 +22,13 @@ export const metadata: Metadata = {
   description: "Created by uKlick Studios USA",
 };
 
-const layout = (await fetchLayoutData("layout-slug")) as GetLayoutQuery;
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const layout = (await fetchLayoutData("layout-slug")) as GetLayoutQuery;
   return (
     <html lang="en">
       <link rel="icon" href="/icon.jpg" />
