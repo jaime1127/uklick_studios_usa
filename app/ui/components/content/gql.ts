@@ -90,3 +90,29 @@ export const collectionQuery = gql`
     }
   }
 `;
+
+export const portfolioQuery = gql`
+  query getPortfolio($slug: String!) {
+    portfolio(where: { slug: $slug }) {
+      collection {
+        slug
+        sets {
+          title
+          description
+          image {
+            id
+            alt
+            fileName
+            size
+            mimeType
+            url
+            width
+            height
+            handle
+            __typename
+          }
+        }
+      }
+    }
+  }
+`;

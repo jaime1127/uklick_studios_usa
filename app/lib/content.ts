@@ -5,11 +5,13 @@ import {
   GetLayoutQuery,
   GetPromoQuery,
   GetCollectionQuery,
+  GetPortfolioQuery,
 } from "@/app/ui/components/generated/gql/types";
 import {
   carouselQuery,
   collectionQuery,
   heroQuery,
+  portfolioQuery,
   promoQuery,
 } from "@/app/ui/components/content/gql";
 import { layoutQuery } from "../ui/components/layout/gql";
@@ -83,6 +85,20 @@ export const fetchCollectionData = async (values: string) => {
     return response;
   } catch (error) {
     console.error("Error fetching collection data:", error);
+    throw error;
+  }
+};
+
+export const fetchPortfolioData = async (values: string) => {
+  try {
+    const response = await request(HYGRAPH_API_ENDPOINT, portfolioQuery, <
+      GetPortfolioQuery
+    >{
+      slug: values,
+    });
+    return response;
+  } catch (error) {
+    console.error("Error fetching portfolio data:", error);
     throw error;
   }
 };

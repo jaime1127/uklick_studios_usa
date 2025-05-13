@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-interface CollectionProps {
+export interface CollectionProps {
   heading?: string;
   sets?: {
     asset?: {
