@@ -22,11 +22,13 @@ export default function Promo({
   return (
     <div className="relative bg-gray-500 mt-4 mb-4">
       <div className="relative h-80 overflow-hidden bg-indigo-600 md:absolute md:left-0 md:h-full md:w-1/3 lg:w-1/2">
-        <Image alt={image.alt}
+        <Image
+          alt={image.alt}
           src={image.url}
           className="size-full object-cover"
           width={500}
-          height={500}/>
+          height={500}
+        />
       </div>
       <div className="relative mx-auto max-w-7xl py-24 sm:py-32 lg:px-8 lg:py-40">
         <div className="pr-6 pl-6 md:ml-auto md:w-2/3 md:pl-16 lg:w-1/2 lg:pr-0 lg:pl-24 xl:pl-32">

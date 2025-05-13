@@ -12,6 +12,7 @@ import {
 } from "@/app/lib/content";
 
 import { Hero, Carousel, Promo, Collection } from "@/app/ui/components/content";
+import Calendly from "./ui/book/Calendly";
 
 export default async function Home() {
   const [hero, carousel, promo, collectionSets] = await Promise.all([
@@ -22,6 +23,7 @@ export default async function Home() {
   ]);
   return (
     <main className="mx-auto max-w-7xl">
+      <Calendly widget />
       <Hero
         blog={hero.hero?.blog || ""}
         heading={hero.hero?.heading || ""}
