@@ -5,7 +5,6 @@ import Link from "next/link";
 
 interface CollectionProps {
   heading?: string;
-  slug: string;
   sets?: {
     asset?: {
       url?: string;
@@ -13,12 +12,12 @@ interface CollectionProps {
     };
     title?: string;
     description?: string;
+    slug: string;
   }[];
 }
 
 export default function Collection({
   heading = "",
-  slug = "/",
   sets = [
     {
       asset: {
@@ -27,6 +26,7 @@ export default function Collection({
       },
       title: "",
       description: "",
+      slug: "",
     },
   ],
 }: CollectionProps) {
@@ -49,7 +49,7 @@ export default function Collection({
                   <p className="text-base font-semibold text-gray-900">
                     {set.title}
                   </p>{" "}
-                  <Link href={slug}>
+                  <Link href={set.slug}>
                     <span className="absolute inset-0" />
                     {set.description}
                   </Link>

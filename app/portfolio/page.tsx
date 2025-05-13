@@ -16,7 +16,6 @@ export default async function Page() {
       <h1 className="mb-4 text-xl md:text-2xl">Dashboard</h1>
       <Collection
         heading={collectionSets.collection?.heading || ""}
-        slug={"portfolio/" + collectionSets.collection?.slug || ""}
         sets={collectionSets.collection?.sets.map((set) => ({
           asset: {
             url: set.image?.url || "",
@@ -24,6 +23,7 @@ export default async function Page() {
           },
           title: set.title || "",
           description: set.description || "",
+          slug: "portfolio/" + set.slug || "",
         }))}
       />
     </main>

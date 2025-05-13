@@ -65,7 +65,6 @@ export default async function Home() {
       />
 
       <Collection
-        slug={"portfolio/" + collectionSets.collection?.slug || ""}
         heading={collectionSets.collection?.heading || ""}
         sets={collectionSets.collection?.sets.map((set) => ({
           asset: {
@@ -74,6 +73,7 @@ export default async function Home() {
           },
           title: set.title || "",
           description: set.description || "",
+          slug: "portfolio/" + set.slug || "",
         }))}
       />
     </main>
