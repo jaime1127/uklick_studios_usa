@@ -1,6 +1,7 @@
 "use client";
 
 import { InlineWidget, PopupButton, PopupWidget } from "react-calendly";
+import { useEffect, useState } from "react";
 
 interface CollectionProps {
   inline?: boolean;
@@ -13,10 +14,16 @@ export default function Calendly({
   widget = false,
   popup = false,
 }: CollectionProps) {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true); // Ensures this runs only on the client side
+  }, []);
+
   return (
     <div>
       {inline ? <InlineWidget url="https://calendly.com/pfjaime" /> : null}
-      {widget && document ? (
+      {widget && isClient ? (
         <PopupWidget
           url="https://calendly.com/pfjaime"
           text="Book now"
@@ -24,7 +31,7 @@ export default function Calendly({
           rootElement={document.getElementById("__next") || document.body}
         />
       ) : null}
-      {popup && document ? (
+      {popup && isClient ? (
         <PopupButton
           url="https://calendly.com/pfjaime"
           text="Book now"
