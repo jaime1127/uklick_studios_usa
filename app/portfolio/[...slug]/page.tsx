@@ -1,4 +1,6 @@
+import { fetchImageListData } from "@/app/lib/content";
 import ImageList from "@/app/ui/components/content/ImageList/ImageList";
+import { GetImageListQuery } from "@/app/ui/components/generated/gql/types";
 import { ArrowLongRightIcon } from "@heroicons/react/24/outline";
 import { Metadata } from "next";
 import Link from "next/link";
@@ -11,6 +13,10 @@ export default async function PortfolioPage(props: {
   params: Promise<{ slug: string }>;
 }) {
   const slug = await props.params;
+  console.log(slug.slug);
+  const portfolioSets = (await fetchImageListData(
+    slug.slug[0] || "default-slug"
+  )) as GetImageListQuery;
 
   return (
     <main className="p-8">
@@ -25,7 +31,17 @@ export default async function PortfolioPage(props: {
         Return to Portfolio
         <ArrowLongRightIcon className="h-6 w-6 text-[#999DA0]" />
       </Link>
-      <ImageList />
+      <ImageList
+        sets={
+          portfolioSets.imageList?.set.map((set, index) => ({
+            slug: set.slug || `fallback-key-${index}`, // Use a fallback key if slug is empty
+            asset: {
+              url: set.image?.url || "",
+              alt: set.image?.alt || "",
+            },
+          })) || []
+        }
+      />
     </main>
   );
 }

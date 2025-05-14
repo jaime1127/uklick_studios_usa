@@ -6,11 +6,13 @@ import {
   GetPromoQuery,
   GetCollectionQuery,
   GetPortfolioQuery,
+  GetImageListQuery,
 } from "@/app/ui/components/generated/gql/types";
 import {
   carouselQuery,
   collectionQuery,
   heroQuery,
+  imageListQuery,
   portfolioQuery,
   promoQuery,
 } from "@/app/ui/components/content/gql";
@@ -99,6 +101,20 @@ export const fetchPortfolioData = async (values: string) => {
     return response;
   } catch (error) {
     console.error("Error fetching portfolio data:", error);
+    throw error;
+  }
+};
+
+export const fetchImageListData = async (values: string) => {
+  try {
+    const response = await request(HYGRAPH_API_ENDPOINT, imageListQuery, <
+      GetImageListQuery
+    >{
+      slug: values,
+    });
+    return response;
+  } catch (error) {
+    console.error("Error fetching image list query data:", error);
     throw error;
   }
 };

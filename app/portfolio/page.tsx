@@ -13,7 +13,6 @@ export default async function Page() {
   )) as GetPortfolioQuery;
 
   return (
-    console.log(portfolioSets),
     <main>
       <h1 className="mb-4 text-xl md:text-2xl">Dashboard</h1>
       <Portfolio

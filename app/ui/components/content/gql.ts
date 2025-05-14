@@ -118,3 +118,24 @@ export const portfolioQuery = gql`
     }
   }
 `;
+
+
+export const imageListQuery = gql`
+query getImageList($slug: String!) {
+  imageList(where: {slug: $slug}) {
+    slug
+    set {
+      slug
+      image {
+        alt
+        fileName
+        mimeType
+        url
+        width
+        height
+        handle
+      }
+    }
+  }
+}
+`;
