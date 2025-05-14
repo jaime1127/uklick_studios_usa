@@ -7,6 +7,7 @@ interface PortfolioProps {
 }
 
 export default function Portfolio({ collections = [] }: PortfolioProps) {
+  console.log(collections);
   return (
     <div className="space-y-12">
       {collections?.map((collection, index) => (

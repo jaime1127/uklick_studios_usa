@@ -12,24 +12,23 @@ export default async function Page() {
     "portfolio-slug"
   )) as GetPortfolioQuery;
 
-  console.log("portfolioSets", portfolioSets);
-
   return (
+    console.log(portfolioSets),
     <main>
       <h1 className="mb-4 text-xl md:text-2xl">Dashboard</h1>
-
       <Portfolio
         collections={
           portfolioSets.portfolio?.collection.map((collection) => ({
-            heading: collection.slug || "",
+            heading: collection.heading || "",
             sets: collection.sets.map((set) => ({
+              heading: set.title || "",
               asset: {
                 url: set.image?.url || "",
                 alt: set.image?.alt || "",
               },
               title: set.title || "",
               description: set.description || "",
-              slug: "portfolio/" + collection.slug || "",
+              slug: "portfolio/" + set.slug || "",
             })),
           })) || []
         }

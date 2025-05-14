@@ -12,7 +12,7 @@ export interface CollectionProps {
     };
     title?: string;
     description?: string;
-    slug: string;
+    slug?: string;
   }[];
 }
 
@@ -48,8 +48,8 @@ export default function Collection({
                 <h3 className="mt-6 text-sm text-gray-500">
                   <p className="text-base font-semibold text-gray-900">
                     {set.title}
-                  </p>{" "}
-                  <Link href={set.slug}>
+                  </p>
+                  <Link href={set.slug || ""}>
                     <span className="absolute inset-0" />
                     {set.description}
                   </Link>

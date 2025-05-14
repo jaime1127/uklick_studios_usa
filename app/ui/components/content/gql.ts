@@ -96,7 +96,9 @@ export const portfolioQuery = gql`
     portfolio(where: { slug: $slug }) {
       collection {
         slug
+        heading
         sets {
+          slug
           title
           description
           image {
