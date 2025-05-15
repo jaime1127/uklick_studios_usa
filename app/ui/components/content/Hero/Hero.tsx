@@ -47,28 +47,47 @@ export default function Hero({
 }: HeroProps) {
   return (
     <div className="w-full h-lvh pb-6">
-        {video && <Video videoAsset={videoAsset} />}
+      {video ? (
+        <Video videoAsset={videoAsset} />
+      ) : (
+        <Image
+          src={asset.url || "/icon.jpg"}
+          alt={asset.alt || "Hero Image"}
+          width={1200}
+          height={1200}
+          loading="lazy"
+          className="absolute inset-0 w-full h-lvh object-cover -z-10"
+        />
+      )}
       <div className="absolute inset-0 flex flex-col md:flex-row items-center justify-center gap-8 z-10 text-center h-lvh p-4">
         <div className="flex flex-col items-center justify-center gap-4 text-center">
+          {link && (
             <Link
-          href="/aboutus"
-          className="whitespace-nowrap font-semibold text-[#999DA0] inline-flex gap-1.5 underline hover:no-underline"
-        >
-          {blog}
-          <ArrowLongRightIcon className="h-6 w-6 text-[#999DA0]" />
-        </Link>
-        <h1 className="text-pretty text-5xl font-semibold tracking-tight text-gray-50 sm:text-6xl">
-          {heading}
-        </h1>
-        <p className="text-pretty text-lg font-medium text-gray-50 sm:text-xl/8">
-          {description}
-        </p>
-        <Link
-          href={link.anchor}
-          className="rounded-md bg-[#999DA0] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-        >
-          {link.label}
-        </Link>
+              href="/aboutus"
+              className="whitespace-nowrap font-semibold text-[#999DA0] inline-flex gap-1.5 underline hover:no-underline"
+            >
+              {blog && (
+                <>
+                  {blog}
+                  <ArrowLongRightIcon className="h-6 w-6 text-[#999DA0]" />
+                </>
+              )}
+            </Link>
+          )}
+          <h1 className="text-pretty text-5xl font-semibold tracking-tight text-gray-50 sm:text-6xl">
+            {heading}
+          </h1>
+          <p className="text-pretty text-lg font-medium text-gray-50 sm:text-xl/8">
+            {description}
+          </p>
+          {link.label && (
+            <Link
+              href={link.anchor}
+              className="rounded-md bg-[#999DA0] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            >
+              {link.label}
+            </Link>
+          )}
         </div>
         {asset.url && (
           <Image
