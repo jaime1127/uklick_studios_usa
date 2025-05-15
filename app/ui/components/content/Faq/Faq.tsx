@@ -6,13 +6,12 @@ const faqs = [
     question: "What's the best thing about Switzerland?",
     answer:
       "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
-  },
-  // More questions...
+  }
 ]
 
-export default function Example() {
+export default function Faq() {
   return (
-    <div className="bg-gray-900">
+    <div className="bg-gray-500">
       <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 lg:py-40">
         <div className="mx-auto max-w-4xl">
           <h2 className="text-4xl font-semibold tracking-tight text-white sm:text-5xl">Frequently asked questions</h2>

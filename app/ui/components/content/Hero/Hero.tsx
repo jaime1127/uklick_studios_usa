@@ -51,7 +51,7 @@ export default function Hero({
         <Video videoAsset={videoAsset} />
       ) : (
         <Image
-          src={asset.url || "/icon.jpg"}
+          src={asset.url || "/camera.jpg"}
           alt={asset.alt || "Hero Image"}
           width={1200}
           height={1200}
