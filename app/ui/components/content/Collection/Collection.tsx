@@ -31,7 +31,7 @@ export default function Collection({
   ],
 }: CollectionProps) {
   return (
-    <div className="pb-4">
+    <div className="py-4">
       <div className="mx-auto max-w-7xl p-8 bg-gray-100">
         <div className="mx-auto max-w-2xl lg:max-w-none">
           <h2 className="text-2xl font-bold text-gray-900">{heading || ""}</h2>
