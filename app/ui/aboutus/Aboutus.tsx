@@ -67,8 +67,8 @@ export default function AboutUs() {
       </div>
 
       {/* Team section */}
-      <div className="bg-gray-100">
-        <div className="mx-auto max-w-7xl p-9">
+      <div className="my-6">
+        <div className="mx-auto max-w-7xl p-9 bg-gray-100">
           <div className="mx-auto max-w-2xl lg:mx-0">
             <h2 className="text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">
               Our team
@@ -106,7 +106,7 @@ export default function AboutUs() {
       <div className="xl:mx-auto xl:max-w-7xl p-9">
         <img
           alt=""
-          src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80"
+          src="/camera.jpg"
           className="aspect-5/2 w-full object-cover xl:rounded-3xl"
         />
       </div>
