@@ -95,7 +95,7 @@ export default function Contact() {
                     href="mailto:hello@example.com"
                     className="hover:text-gray-900"
                   >
-                    pfjaime@yahoo.com
+                    uklickstudios@gmail.com
                   </a>
                 </dd>
               </div>

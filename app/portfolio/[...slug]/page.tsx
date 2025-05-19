@@ -13,13 +13,12 @@ export default async function PortfolioPage(props: {
   params: Promise<{ slug: string }>;
 }) {
   const slug = await props.params;
-  console.log(slug.slug);
   const portfolioSets = (await fetchImageListData(
     slug.slug[0] || "default-slug"
   )) as GetImageListQuery;
 
   return (
-    <main className="p-8">
+    <main className="py-8">
       <h1 className="text-2xl font-bold">Portfolio Page</h1>
       <p className="mt-4 text-lg text-gray-600">
         You are viewing the portfolio for: <strong>{slug.slug}</strong>

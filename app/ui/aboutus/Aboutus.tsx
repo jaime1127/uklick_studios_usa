@@ -103,7 +103,7 @@ export default function AboutUs() {
       <Pricing />
       <Faq />
       {/* Image section */}
-      <div className="xl:mx-auto xl:max-w-7xl p-9">
+      <div className="xl:mx-auto xl:max-w-7xl py-9">
         <img
           alt=""
           src="/camera.jpg"
