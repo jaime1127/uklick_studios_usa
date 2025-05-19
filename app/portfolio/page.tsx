@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 import { fetchPortfolioData } from "../lib/content";
 import { GetPortfolioQuery } from "../ui/components/generated/gql/types";
-import Portfolio from "../ui/components/content/Portfilio/Portfolio";
 
+import Portfolio from "../ui/components/content/Portfilio/Portfolio";
 export const metadata: Metadata = {
   title: "Portfolio",
 };
@@ -18,13 +18,16 @@ export default async function Page() {
       style={{ paddingTop: "4rem" }}
     >
       <div className="py-4">
-        <h1 className="text-4xl font-bold text-gray-800 text-center">
-          Our Portfolio
-        </h1>
-        <p className="text-lg text-gray-600 mt-2 text-center">
-          Explore our portfolio to see the creativity, passion, and
-          professionalism we bring to every session.
-        </p>
+        <div className="justify-items-center ">
+          <h1 className="text-4xl font-bold text-gray-800 text-center">
+            Our Portfolio
+          </h1>
+          <p className="text-lg text-gray-600 mt-2 text-center">
+            Explore our portfolio to see the creativity, passion, and
+            professionalism we bring to every session.
+          </p>
+        </div>
+
         <Portfolio
           collections={
             portfolioSets.portfolio?.collection.map((collection) => ({

@@ -64,12 +64,12 @@ export default function Hero({
           {link && (
             <Link
               href="/aboutus"
-              className="whitespace-nowrap font-semibold text-[#999DA0] inline-flex gap-1.5 underline hover:no-underline"
+              className="whitespace-nowrap font-semibold text-indigo-400 inline-flex gap-1.5 underline hover:no-underline"
             >
               {blog && (
                 <>
                   {blog}
-                  <ArrowLongRightIcon className="h-6 w-6 text-[#999DA0]" />
+                  <ArrowLongRightIcon className="h-6 w-6 text-indigo-400" />
                 </>
               )}
             </Link>
