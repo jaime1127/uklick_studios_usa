@@ -57,7 +57,7 @@ export default function Hero({
           className="absolute inset-0 w-full h-lvh object-cover -z-10"
         />
       )}
-      <div className="absolute inset-0 flex flex-col md:flex-row items-center justify-center gap-8 z-10 text-center h-lvh p-4">
+      <div className="absolute inset-0 flex flex-col md:flex-row items-center justify-center gap-8 z-10 text-center h-lvh p-4 m-8">
         <div className="flex flex-col items-center justify-center gap-4 text-center">
           {link && (
             <Link
