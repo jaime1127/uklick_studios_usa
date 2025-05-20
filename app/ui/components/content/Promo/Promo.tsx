@@ -30,7 +30,7 @@ export default function Promo({
           height={500}
         />
       </div>
-      <div className="relative mx-auto max-w-7xl py-24 sm:py-32 lg:px-8 lg:py-40">
+      <div className="relative mx-auto max-w-7xl py-10 sm:py-32 lg:px-8 lg:py-40">
         <div className="pr-6 pl-6 md:ml-auto md:w-2/3 md:pl-16 lg:w-1/2 lg:pr-0 lg:pl-24 xl:pl-32">
           <h2 className="text-base/7 font-semibold text-indigo-400">
             {eyebrow}
