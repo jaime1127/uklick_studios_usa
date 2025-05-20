@@ -19,13 +19,22 @@ import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
 
 interface SwiperProps {
+  heading?: string;
+  description?: string;
   slides?: Array<{
     src?: string;
     alt?: string;
   }>;
+  link?: {
+    anchor?: string;
+    label?: string;
+  };
 }
 
 export default function Carousel({
+  heading = "",
+  description = "",
+  link = { anchor: "", label: "" },
   slides = [{ src: "", alt: "" }],
 }: SwiperProps) {
   const progressCircle = useRef<SVGSVGElement | null>(null);
@@ -42,20 +51,15 @@ export default function Carousel({
     }
   };
   return (
-    <div className="pt-6">
+    <div className="pt-6 bg-white">
       <div className="text-center mb-8">
-        <h2 className="text-4xl font-bold text-gray-800">
-          Celebrate the Beauty of Motherhood
-        </h2>
-        <p className="text-lg text-gray-600 mt-2">
-          Capture timeless moments with our exclusive maternity photography
-          sessions. Let us help you preserve these precious memories forever.
-        </p>
+        <h2 className="text-4xl font-bold text-gray-800">{heading}</h2>
+        <p className="text-lg text-gray-600 mt-2">{description}</p>
         <Link
-          href="/book"
+          href={link.anchor || "#"}
           className="whitespace-nowrap font-semibold text-[#999DA0] flex gap-1.5 justify-center underline hover:no-underline"
         >
-          Learn more
+          {link.label}
         </Link>
       </div>
       <Swiper

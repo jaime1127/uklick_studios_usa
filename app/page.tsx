@@ -15,11 +15,12 @@ import { Hero, Carousel, Promo, Collection } from "@/app/ui/components/content";
 import Calendly from "./ui/book/Calendly";
 
 export default async function Home() {
-  const [hero, carousel, promo, collectionSets] = await Promise.all([
+  const [hero, carousel, promo, collectionSets, headshot] = await Promise.all([
     fetchHeroData("home-page") as Promise<GetHeroQuery>,
     fetchCarouselData("home-page-carousel") as Promise<GetCarouselQuery>,
     fetchPromoData("home-page-promo") as Promise<GetPromoQuery>,
     fetchCollectionData("holiday-set") as Promise<GetCollectionQuery>,
+    fetchCarouselData("home-page-carousel-headshot") as Promise<GetCarouselQuery>,
   ]);
   return (
     <main className="mx-auto max-w-7xl">
@@ -48,6 +49,12 @@ export default async function Home() {
       />
 
       <Carousel
+        heading={carousel.carousel?.heading || ""}
+        description={carousel.carousel?.description || ""}
+        link={{
+          anchor: carousel.carousel?.link?.anchor || "",
+          label: carousel.carousel?.link?.label || "",
+        }}
         slides={
           carousel.carousel?.slides?.map((slide) => ({
             src: slide.image?.url || "",
@@ -77,6 +84,21 @@ export default async function Home() {
           description: set.description || "",
           slug: "portfolio/" + set.slug || "",
         }))}
+      />
+
+      <Carousel
+        heading={headshot.carousel?.heading || ""}
+        description={headshot.carousel?.description || ""}
+        link={{
+          anchor: headshot.carousel?.link?.anchor || "",
+          label: headshot.carousel?.link?.label || "",
+        }}
+        slides={
+          headshot.carousel?.slides?.map((slide) => ({
+            src: slide.image?.url || "",
+            alt: slide.image?.alt || "",
+          })) || []
+        }
       />
     </main>
   );

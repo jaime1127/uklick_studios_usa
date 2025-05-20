@@ -29,20 +29,17 @@ export const heroQuery = gql`
 export const carouselQuery = gql`
   query getCarousel($slug: String!) {
     carousel(where: { slug: $slug }) {
-      id
+      heading
+      link {
+        anchor
+        label
+      }
+      description
       slides {
         slug
         image {
-          id
           alt
-          fileName
-          size
-          mimeType
           url
-          width
-          height
-          handle
-          __typename
         }
       }
     }
@@ -119,23 +116,22 @@ export const portfolioQuery = gql`
   }
 `;
 
-
 export const imageListQuery = gql`
-query getImageList($slug: String!) {
-  imageList(where: {slug: $slug}) {
-    slug
-    set(first: 50)  {
+  query getImageList($slug: String!) {
+    imageList(where: { slug: $slug }) {
       slug
-      image {
-        alt
-        fileName
-        mimeType
-        url
-        width
-        height
-        handle
+      set(first: 50) {
+        slug
+        image {
+          alt
+          fileName
+          mimeType
+          url
+          width
+          height
+          handle
+        }
       }
     }
   }
-}
 `;
