@@ -63,7 +63,7 @@ export default function Footer({
   links = [{ anchor: "", label: "", slug: "" }],
 }: FooterProps) {
   return (
-    <footer className="bg-gray-900">
+    <footer className="bg-gray-900 mt-8">
       <div className="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
         <nav
           aria-label="Footer"
