@@ -1,4 +1,11 @@
-export { default as Hero } from "./Hero/Hero";
 export { default as Carousel } from "./Carousel/Carousel";
-export { default as Promo } from "./Promo/Promo";
 export { default as Collection } from "./Collection/Collection";
+export { default as Dialog } from "./Dialog/Dialog";
+export { default as Faq } from "./Faq/Faq";
+export { default as Feature } from "./Feature/Feature";
+export { default as Hero } from "./Hero/Hero";
+export { default as ImageList } from "./ImageList/ImageList";
+export { default as Portfolio } from "./Portfolio/Portfolio";
+export { default as Pricing } from "./Pricing/Pricing";
+export { default as Promo } from "./Promo/Promo";
+export { default as Video } from "./Video/Video";

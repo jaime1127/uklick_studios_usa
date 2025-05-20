@@ -1,7 +1,5 @@
 "use client";
 
-import { ArrowLongRightIcon } from "@heroicons/react/24/outline";
-
 import Image from "next/image";
 import Link from "next/link";
 import Video from "../Video/Video";
@@ -46,7 +44,7 @@ export default function Hero({
   },
 }: HeroProps) {
   return (
-    <div className="w-full h-lvh pb-6">
+    <div className="w-full h-lvh pb-6 m-4">
       {video ? (
         <Video videoAsset={videoAsset} />
       ) : (
@@ -66,12 +64,7 @@ export default function Hero({
               href="/aboutus"
               className="whitespace-nowrap font-semibold text-indigo-400 inline-flex gap-1.5 underline hover:no-underline"
             >
-              {blog && (
-                <>
-                  {blog}
-                  <ArrowLongRightIcon className="h-6 w-6 text-indigo-400" />
-                </>
-              )}
+              {blog && <span> {blog} &rarr;</span>}
             </Link>
           )}
           <h1 className="text-pretty text-5xl font-semibold tracking-tight text-gray-50 sm:text-6xl">

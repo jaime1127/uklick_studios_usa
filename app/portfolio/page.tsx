@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { fetchPortfolioData } from "../lib/content";
 import { GetPortfolioQuery } from "../ui/components/generated/gql/types";
 
-import Portfolio from "../ui/components/content/Portfilio/Portfolio";
+import Portfolio from "../ui/components/content/Portfolio/Portfolio";
 export const metadata: Metadata = {
   title: "Portfolio",
 };
