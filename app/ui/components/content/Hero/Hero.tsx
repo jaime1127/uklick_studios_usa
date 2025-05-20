@@ -44,7 +44,7 @@ export default function Hero({
   },
 }: HeroProps) {
   return (
-    <div className="w-full h-lvh">
+    <div className="w-full h-lvh pb-6">
       {video ? (
         <Video videoAsset={videoAsset} />
       ) : (

@@ -23,7 +23,7 @@ export default async function Home() {
     fetchCarouselData("home-page-carousel-headshot") as Promise<GetCarouselQuery>,
   ]);
   return (
-    <main className="mx-auto max-w-7xl pt-16">
+    <main className="mx-auto max-w-7xl">
       <Calendly widget />
       <Hero
         blog={hero.hero?.blog || ""}
