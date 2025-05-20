@@ -2,6 +2,7 @@
 
 import { InlineWidget, PopupButton, PopupWidget } from "react-calendly";
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 interface CollectionProps {
   inline?: boolean;
@@ -19,11 +20,11 @@ export default function Calendly({
   useEffect(() => {
     setIsClient(true); // Ensures this runs only on the client side
   }, []);
-
+  const pathname = usePathname();
   return (
     <div>
       {inline ? <InlineWidget url="https://calendly.com/pfjaime" /> : null}
-      {widget && isClient ? (
+      {widget && pathname !== "/book" && isClient ? (
         <PopupWidget
           url="https://calendly.com/pfjaime"
           text="Book now"

@@ -6,6 +6,7 @@ import { Header, Footer } from "@/app/ui/components/layout";
 import { GetLayoutQuery } from "@/app/ui/components/generated/gql/types";
 import { fetchLayoutData } from "@/app/lib/content";
 import { Analytics } from "@vercel/analytics/react";
+import Calendly from "./ui/book/Calendly";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,7 +23,6 @@ export const metadata: Metadata = {
   description: "Created by uKlick Studios USA",
 };
 
-
 export default async function RootLayout({
   children,
 }: Readonly<{
@@ -36,6 +36,7 @@ export default async function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Analytics />
+        <Calendly widget />
         <Header
           image={{
             alt: layout.header?.image?.alt || "",
