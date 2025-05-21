@@ -1,62 +1,45 @@
-import type {
-  GetCarouselQuery,
-  GetCollectionQuery,
-  GetHeroQuery,
-  GetPromoQuery,
-} from "@/app/ui/components/generated/gql/types";
-import {
-  fetchCarouselData,
-  fetchCollectionData,
-  fetchHeroData,
-  fetchPromoData,
-} from "@/app/lib/content";
+import type { GetContentPageQuery } from "@/app/ui/components/generated/gql/types";
+import { fetchContentPage } from "@/app/lib/content";
 
 import { Hero, Carousel, Promo, Collection } from "@/app/ui/components/content";
 
 export default async function Home() {
-  const [hero, carousel, promo, collectionSets, headshot] = await Promise.all([
-    fetchHeroData("home-page") as Promise<GetHeroQuery>,
-    fetchCarouselData("home-page-carousel") as Promise<GetCarouselQuery>,
-    fetchPromoData("home-page-promo") as Promise<GetPromoQuery>,
-    fetchCollectionData("holiday-set") as Promise<GetCollectionQuery>,
-    fetchCarouselData(
-      "home-page-carousel-headshot"
-    ) as Promise<GetCarouselQuery>,
-  ]);
+  const content = (await fetchContentPage("home-page")) as GetContentPageQuery;
+
   return (
     <main className="mx-auto max-w-7xl">
       <Hero
-        blog={hero.hero?.blog || ""}
-        heading={hero.hero?.heading || ""}
-        description={hero.hero?.description || ""}
+        blog={content.contentPage?.hero?.blog || ""}
+        heading={content.contentPage?.hero?.heading || ""}
+        description={content.contentPage?.hero?.description || ""}
         link={{
-          anchor: hero.hero?.link?.anchor || "",
-          label: hero.hero?.link?.label || "",
+          anchor: content.contentPage?.hero?.link?.anchor || "",
+          label: content.contentPage?.hero?.link?.label || "",
         }}
         asset={{
-          url: hero.hero?.asset?.url || "",
-          alt: hero.hero?.asset?.alt || "",
+          url: content.contentPage?.hero?.asset?.url || "",
+          alt: content.contentPage?.hero?.asset?.alt || "",
         }}
-        video
+        video={!!content.contentPage?.hero?.videoAsset}
         videoAsset={{
           asset: {
-            url: hero.hero?.videoAsset?.asset?.url || "",
-            alt: "",
-            size: 0,
-            handle: "",
+            url: content.contentPage?.hero?.videoAsset?.asset?.url || "",
+            alt: content.contentPage?.hero?.videoAsset?.asset?.alt || "",
+            size: content.contentPage?.hero?.videoAsset?.asset?.size || 0,
+            handle: content.contentPage?.hero?.videoAsset?.asset?.handle || "",
           },
         }}
       />
 
       <Carousel
-        heading={carousel.carousel?.heading || ""}
-        description={carousel.carousel?.description || ""}
+        heading={content.contentPage?.carousel?.[1]?.heading || ""}
+        description={content.contentPage?.carousel?.[1]?.description || ""}
         link={{
-          anchor: carousel.carousel?.link?.anchor || "",
-          label: carousel.carousel?.link?.label || "",
+          anchor: content.contentPage?.carousel?.[1]?.link?.anchor || "",
+          label: content.contentPage?.carousel?.[1]?.link?.label || "",
         }}
         slides={
-          carousel.carousel?.slides?.map((slide) => ({
+          content.contentPage?.carousel?.[1]?.slides?.map((slide) => ({
             src: slide.image?.url || "",
             alt: slide.image?.alt || "",
           })) || []
@@ -64,37 +47,39 @@ export default async function Home() {
       />
 
       <Promo
-        heading={promo.promo?.heading || ""}
-        description={promo.promo?.description || ""}
-        eyebrow={promo.promo?.eyebrow || ""}
+        heading={content.contentPage?.promo?.[0]?.heading || ""}
+        description={content.contentPage?.promo?.[0]?.description || ""}
+        eyebrow={content.contentPage?.promo?.[0]?.eyebrow || ""}
         image={{
-          alt: promo.promo?.image?.alt || "",
-          url: promo.promo?.image?.url || "",
+          alt: content.contentPage?.promo?.[0]?.image?.alt || "",
+          url: content.contentPage?.promo?.[0]?.image?.url || "",
         }}
       />
 
       <Collection
-        heading={collectionSets.collection?.heading || ""}
-        sets={collectionSets.collection?.sets.map((set) => ({
-          asset: {
-            url: set.image?.url || "",
-            alt: set.image?.alt || "",
-          },
-          title: set.title || "",
-          description: set.description || "",
-          slug: "portfolio/" + set.slug || "",
-        }))}
+        heading={content.contentPage?.collection?.heading || ""}
+        sets={
+          content.contentPage?.collection?.sets?.map((set) => ({
+            asset: {
+              url: set.image?.url || "",
+              alt: set.image?.alt || "",
+            },
+            title: set.title || "",
+            description: set.description || "",
+            slug: "portfolio/" + (set.slug || ""),
+          })) || []
+        }
       />
 
       <Carousel
-        heading={headshot.carousel?.heading || ""}
-        description={headshot.carousel?.description || ""}
+        heading={content.contentPage?.carousel?.[0]?.heading || ""}
+        description={content.contentPage?.carousel?.[0]?.description || ""}
         link={{
-          anchor: headshot.carousel?.link?.anchor || "",
-          label: headshot.carousel?.link?.label || "",
+          anchor: content.contentPage?.carousel?.[0]?.link?.anchor || "",
+          label: content.contentPage?.carousel?.[0]?.link?.label || "",
         }}
         slides={
-          headshot.carousel?.slides?.map((slide) => ({
+          content.contentPage?.carousel?.[0]?.slides?.map((slide) => ({
             src: slide.image?.url || "",
             alt: slide.image?.alt || "",
           })) || []

@@ -26,6 +26,30 @@ export const heroQuery = gql`
   }
 `;
 
+export const heroFields = gql`
+  fragment heroFields on Hero {
+    blog
+    heading
+    description
+    link {
+      anchor
+      label
+    }
+    asset {
+      url
+      alt
+    }
+    videoAsset {
+      asset {
+        alt
+        size
+        url
+        handle
+      }
+    }
+  }
+`;
+
 export const carouselQuery = gql`
   query getCarousel($slug: String!) {
     carousel(where: { slug: $slug }) {
@@ -46,6 +70,24 @@ export const carouselQuery = gql`
   }
 `;
 
+export const carouselFields = gql`
+  fragment carouselFields on Carousel {
+    heading
+    link {
+      anchor
+      label
+    }
+    description
+    slides {
+      slug
+      image {
+        alt
+        url
+      }
+    }
+  }
+`;
+
 export const promoQuery = gql`
   query getPromo($slug: String!) {
     promo(where: { slug: $slug }) {
@@ -57,6 +99,19 @@ export const promoQuery = gql`
         alt
         url
       }
+    }
+  }
+`;
+
+export const promoFields = gql`
+  fragment promoFields on Promo {
+    slug
+    heading
+    eyebrow
+    description
+    image {
+      alt
+      url
     }
   }
 `;
@@ -83,6 +138,31 @@ export const collectionQuery = gql`
           handle
           __typename
         }
+      }
+    }
+  }
+`;
+
+export const collectionFields = gql`
+  fragment collectionFields on Collection {
+    slug
+    heading
+    sets {
+      slug
+      id
+      title
+      description
+      image {
+        id
+        alt
+        fileName
+        size
+        mimeType
+        url
+        width
+        height
+        handle
+        __typename
       }
     }
   }
@@ -131,6 +211,33 @@ export const imageListQuery = gql`
           height
           handle
         }
+      }
+    }
+  }
+`;
+
+export const contentPageQuery = gql`
+  ${heroFields}
+  ${carouselFields}
+  ${promoFields}
+  ${collectionFields}
+  query getContentPage($slug: String!) {
+    contentPage(where: { slug: $slug }) {
+      slug
+      content {
+        raw
+      }
+      hero {
+        ...heroFields
+      }
+      carousel {
+        ...carouselFields
+      }
+      promo {
+        ...promoFields
+      }
+      collection {
+        ...collectionFields
       }
     }
   }
