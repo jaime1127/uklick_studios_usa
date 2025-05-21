@@ -4,13 +4,16 @@ import Link from "next/link";
 import Image from "next/image";
 
 interface PromoProps {
-  heading?: string;
-  description?: string;
-  eyebrow?: string;
-  image?: {
-    url: string;
-    alt: string;
-  };
+  heading?: string | undefined | null;
+  description?: string | undefined | null;
+  eyebrow?: string | undefined | null;
+  image?:
+    | {
+        url?: string | undefined | null;
+        alt?: string | undefined | null;
+      }
+    | undefined
+    | null;
 }
 
 export default function Promo({
@@ -23,8 +26,8 @@ export default function Promo({
     <div className="relative bg-gray-500 mt-4 mb-4">
       <div className="relative h-80 overflow-hidden bg-indigo-600 md:absolute md:left-0 md:h-full md:w-1/3 lg:w-1/2">
         <Image
-          alt={image.alt}
-          src={image.url}
+          alt={image?.alt || ""}
+          src={image?.url || ""}
           className="size-full object-cover"
           width={500}
           height={500}

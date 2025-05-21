@@ -19,23 +19,34 @@ import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
 
 interface SwiperProps {
-  heading?: string;
-  description?: string;
-  slides?: Array<{
-    src?: string;
-    alt?: string;
-  }>;
-  link?: {
-    anchor?: string;
-    label?: string;
-  };
+  heading?: string | undefined | null;
+  description?: string | undefined | null;
+  slides?:
+    | {
+        image?:
+          | {
+              url?: string | undefined | null;
+              alt?: string | undefined | null;
+            }
+          | undefined
+          | null;
+      }[]
+    | undefined
+    | null;
+  link?:
+    | {
+        anchor?: string | undefined | null;
+        label?: string | undefined | null;
+      }
+    | undefined
+    | null;
 }
 
 export default function Carousel({
   heading = "",
   description = "",
   link = { anchor: "", label: "" },
-  slides = [{ src: "", alt: "" }],
+  slides = [{ image: { url: "", alt: "" } }],
 }: SwiperProps) {
   const progressCircle = useRef<SVGSVGElement | null>(null);
   const progressContent = useRef<HTMLSpanElement | null>(null);
@@ -56,10 +67,10 @@ export default function Carousel({
         <h2 className="text-4xl font-bold text-gray-800">{heading}</h2>
         <p className="text-lg text-gray-600 mt-2">{description}</p>
         <Link
-          href={link.anchor || "#"}
+          href={link?.anchor || "#"}
           className="whitespace-nowrap font-semibold text-[#999DA0] flex gap-1.5 justify-center underline hover:no-underline"
         >
-          {link.label}
+          {link?.label}
         </Link>
       </div>
       <Swiper
@@ -84,11 +95,14 @@ export default function Carousel({
         modules={[EffectCoverflow, Navigation, Pagination, Autoplay]}
         onAutoplayTimeLeft={onAutoplayTimeLeft}
       >
-        {slides.map((slide: { src?: string; alt?: string }) => (
-          <SwiperSlide className="justify-items-center" key={slide.src}>
+        {slides?.map((slide, idx) => (
+          <SwiperSlide
+            className="justify-items-center"
+            key={slide?.image?.url || idx}
+          >
             <Image
-              src={slide.src || ""}
-              alt={slide.alt || "Hero Image"}
+              src={slide?.image?.url || ""}
+              alt={slide?.image?.alt || "Hero Image"}
               width={550}
               height={400}
               loading="lazy"

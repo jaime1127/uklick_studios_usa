@@ -169,28 +169,13 @@ export const collectionFields = gql`
 `;
 
 export const portfolioQuery = gql`
+  ${collectionFields}
   query getPortfolio($slug: String!) {
     portfolio(where: { slug: $slug }) {
+      heading
+      description
       collection {
-        slug
-        heading
-        sets {
-          slug
-          title
-          description
-          image {
-            id
-            alt
-            fileName
-            size
-            mimeType
-            url
-            width
-            height
-            handle
-            __typename
-          }
-        }
+        ...collectionFields
       }
     }
   }
