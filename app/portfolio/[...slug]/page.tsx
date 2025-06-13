@@ -18,7 +18,7 @@ export default async function PortfolioPage(props: {
   )) as GetImageListQuery;
 
   return (
-    <main className="py-8">
+    <main className="py-8 mx-auto max-w-7xl">
       <h1 className="text-2xl font-bold">Portfolio Page</h1>
       <p className="mt-4 text-lg text-gray-600">
         You are viewing the portfolio for: <strong>{slug.slug}</strong>
@@ -27,7 +27,7 @@ export default async function PortfolioPage(props: {
         href="/portfolio"
         className="whitespace-nowrap font-semibold text-[#999DA0] inline-flex gap-1.5 underline hover:no-underline"
       >
-        Return to Portfolio
+        Return to Portfolio Page
         <ArrowLongRightIcon className="h-6 w-6 text-[#999DA0]" />
       </Link>
       <ImageList

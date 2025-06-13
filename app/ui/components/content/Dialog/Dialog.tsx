@@ -1,21 +1,28 @@
 "use client";
 
-import { useState } from "react";
 import { Dialog, DialogBackdrop, DialogPanel } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
+import Image from "next/image";
 
-const product = {
-  href: "#",
-  imageSrc:
-    "https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-01-featured-product-shot.jpg",
-  imageAlt: "Back of women's Basic Tee in black.",
-};
+export interface DialogProps {
+  onClose?: (open: boolean) => void;
+  open?: boolean;
+  url?: string;
+  alt?: string;
+}
 
-export default function Example() {
-  const [open, setOpen] = useState(true);
-
+export default function ImageDialog({
+  onClose,
+  open = false,
+  url = "",
+  alt = "",
+}: DialogProps) {
   return (
-    <Dialog open={open} onClose={setOpen} className="relative z-10">
+    <Dialog
+      open={open}
+      onClose={onClose ?? (() => {})}
+      className="relative z-10"
+    >
       <DialogBackdrop
         transition
         className="fixed inset-0 hidden bg-gray-500/75 transition-opacity data-closed:opacity-0 data-enter:duration-300 data-enter:ease-out data-leave:duration-200 data-leave:ease-in md:block"
@@ -29,7 +36,7 @@ export default function Example() {
             <div className="relative flex  items-center overflow-hidden bg-white px-4 pt-14 pb-8 shadow-2xl sm:px-6 sm:pt-8 md:p-6 lg:p-8">
               <button
                 type="button"
-                onClick={() => setOpen(false)}
+                onClick={() => onClose?.(false)}
                 className="absolute top-4 right-4 text-gray-400 hover:text-gray-500 sm:top-8 sm:right-6 md:top-6 md:right-6 lg:top-8 lg:right-8"
               >
                 <span className="sr-only">Close</span>
@@ -37,10 +44,12 @@ export default function Example() {
               </button>
 
               <div className="grid grid-cols-1 items-start lg:items-center">
-                <img
-                  alt={product.imageAlt}
-                  src={product.imageSrc}
+                <Image
+                  alt={alt || "Image"}
+                  src={url || ""}
                   className="max-w-full max-h-screen w-auto h-auto rounded-lg bg-gray-100 object-contain"
+                  height={800}
+                  width={800}
                 />
               </div>
             </div>
