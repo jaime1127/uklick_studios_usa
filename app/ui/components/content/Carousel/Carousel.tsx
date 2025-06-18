@@ -8,7 +8,7 @@ import {
   Pagination,
   Autoplay,
 } from "swiper/modules";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -17,6 +17,7 @@ import Link from "next/link";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
+import Dialog from "../Dialog/Dialog";
 
 interface SwiperProps {
   heading?: string | undefined | null;
@@ -61,6 +62,15 @@ export default function Carousel({
       progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
     }
   };
+
+  const [open, setOpen] = useState(false);
+  const [selected, setSelected] = useState<{ url?: string; alt?: string }>({});
+
+  function handleDialog(url: string, alt: string) {
+    setSelected({ url, alt });
+    setOpen(true);
+  }
+
   return (
     <div className="pt-6 bg-white">
       <div className="text-center mb-8">
@@ -107,6 +117,9 @@ export default function Carousel({
               height={400}
               loading="lazy"
               className="rounded-lg"
+              onClick={() =>
+                handleDialog(slide?.image?.url || "", slide?.image?.alt || "")
+              }
             />
           </SwiperSlide>
         ))}
@@ -117,6 +130,12 @@ export default function Carousel({
           <span ref={progressContent}></span>
         </div>
       </Swiper>
+      <Dialog
+        open={open}
+        onClose={setOpen}
+        url={selected.url}
+        alt={selected.alt}
+      />
       <style jsx>{`
         .autoplay-progress {
           position: absolute;

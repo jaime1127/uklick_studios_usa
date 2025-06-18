@@ -20,6 +20,7 @@ export default function Calendly({
   useEffect(() => {
     setIsClient(true); // Ensures this runs only on the client side
   }, []);
+
   const pathname = usePathname();
   return (
     <div>
@@ -32,7 +33,7 @@ export default function Calendly({
           rootElement={document.getElementById("__next") || document.body}
         />
       ) : null}
-      {popup && isClient ? (
+      {popup && pathname !== "/book" && isClient ? (
         <PopupButton
           url="https://calendly.com/pfjaime"
           text="Book now"
