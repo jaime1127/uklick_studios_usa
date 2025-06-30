@@ -24,7 +24,12 @@ export default function Calendly({
   const pathname = usePathname();
   return (
     <div>
-      {inline ? <InlineWidget url="https://calendly.com/pfjaime" /> : null}
+      {inline ? (
+        <InlineWidget
+          url="https://calendly.com/pfjaime"
+          pageSettings={{ hideGdprBanner: true }}
+        />
+      ) : null}
       {widget && pathname !== "/book" && isClient ? (
         <PopupWidget
           url="https://calendly.com/pfjaime"

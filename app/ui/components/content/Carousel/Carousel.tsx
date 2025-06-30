@@ -109,6 +109,7 @@ export default function Carousel({
           <SwiperSlide
             className="justify-items-center"
             key={slide?.image?.url || idx}
+            tag="li"
           >
             <Image
               src={slide?.image?.url || ""}
@@ -123,6 +124,7 @@ export default function Carousel({
             />
           </SwiperSlide>
         ))}
+
         <div className="autoplay-progress" slot="container-end">
           <svg viewBox="0 0 48 48" ref={progressCircle}>
             <circle cx="24" cy="24" r="20"></circle>
