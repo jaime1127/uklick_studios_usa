@@ -41,7 +41,7 @@ export default function AboutUs({ content = [] }: AboutUsProps) {
                 width={1200}
                 height={1200}
                 loading="lazy"
-                className="aspect-4/5 w-52 flex-none rounded-2xl object-cover"
+                className="aspect-4/5 lg:w-52 flex-none rounded-2xl object-cover"
               />
               <div className="flex-auto">
                 <h3 className="text-lg/8 font-semibold tracking-tight text-gray-900">
