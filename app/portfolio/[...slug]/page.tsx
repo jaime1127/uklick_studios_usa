@@ -21,7 +21,8 @@ export default async function PortfolioPage(props: {
     <main className="py-8 mx-auto max-w-7xl">
       <h1 className="text-2xl font-bold">Portfolio Page</h1>
       <p className="mt-4 text-lg text-gray-600">
-        You are viewing the portfolio for: <strong>{slug.slug}</strong>
+        You are viewing the portfolio for:{" "}
+        <strong>{portfolioSets.imageList?.title}</strong>
       </p>
       <Link
         href="/portfolio"

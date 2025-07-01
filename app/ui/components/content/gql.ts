@@ -185,6 +185,7 @@ export const imageListQuery = gql`
   query getImageList($slug: String!) {
     imageList(where: { slug: $slug }) {
       slug
+      title
       set(first: 50) {
         slug
         image {
