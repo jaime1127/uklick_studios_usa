@@ -41,13 +41,13 @@ export default function AboutUs({ content = [] }: AboutUsProps) {
                 width={1200}
                 height={1200}
                 loading="lazy"
-                className="aspect-4/5 lg:w-52 flex-none rounded-2xl object-cover"
+                className="aspect-4/5 lg:w-80 flex-none rounded-2xl object-cover"
               />
               <div className="flex-auto">
                 <h3 className="text-lg/8 font-semibold tracking-tight text-gray-900">
                   {person.name}
                 </h3>
-                <p className="text-base/7 text-gray-600">{person.role}</p>
+                <p className="text-base/7 text-indigo-600">{person.role}</p>
                 <p className="mt-6 text-base/7 text-gray-600">{person.bio}</p>
               </div>
             </li>
