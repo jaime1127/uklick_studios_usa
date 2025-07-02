@@ -7,7 +7,7 @@ export default async function Home() {
   const content = (await fetchContentPage("home-page")) as GetContentPageQuery;
 
   return (
-    <main className="mx-auto max-w-7xl">
+    <main className="mx-auto max-w-7xl bg-white">
       <Hero {...content.contentPage?.hero} video={true} />
 
       <Carousel {...content.contentPage?.carousel?.[0]} />
