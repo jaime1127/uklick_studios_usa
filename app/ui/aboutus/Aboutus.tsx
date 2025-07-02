@@ -21,7 +21,7 @@ export default function AboutUs({ content = [] }: AboutUsProps) {
         video={false}
       />
       {/* Our misson*/}
-      <div className="mx-auto max-w-7xl p-9">
+      <div className="mx-auto max-w-7xl p-9 bg-white">
         <RichText content={content[0].raw} />
       </div>
       <Team content={content[1].raw} />
@@ -29,7 +29,7 @@ export default function AboutUs({ content = [] }: AboutUsProps) {
       <Faq />
 
       {/* Values section */}
-      <div className="mx-auto max-w-7xl p-9">
+      <div className="mx-auto max-w-7xl p-9 bg-white">
         <div className="mx-auto max-w-2xl lg:mx-0">
           <h2 className="text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">
             Our Values

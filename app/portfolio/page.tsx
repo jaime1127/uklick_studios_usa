@@ -12,7 +12,7 @@ export default async function Page() {
     "portfolio-slug"
   )) as GetPortfolioQuery;
   return (
-    <main className="relative mx-auto max-w-7xl mb-4 pt-16">
+    <main className="relative mx-auto max-w-7xl mb-4 pt-16 bg-white">
       <Portfolio {...portfolioSets.portfolio} />
     </main>
   );
