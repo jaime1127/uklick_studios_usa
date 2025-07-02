@@ -10,8 +10,6 @@ export const metadata: Metadata = {
 export default async function Page() {
   const content = (await fetchContentPage("about-us")) as GetContentPageQuery;
 
-  console.log("Content for About Us page:", content);
-
   const contentArray =
     content.contentPage && Array.isArray(content.contentPage.content)
       ? content.contentPage.content

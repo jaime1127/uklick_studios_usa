@@ -22,7 +22,7 @@ interface AboutUsProps {
   content?: any;
 }
 
-export default function AboutUs({ content = [] }: AboutUsProps) {
+export default function Team({ content = [] }: AboutUsProps) {
   return (
     <div className="my-6">
       <div className="mx-auto max-w-7xl p-9 bg-gray-100">

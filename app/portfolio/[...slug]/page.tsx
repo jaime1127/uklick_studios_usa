@@ -18,7 +18,7 @@ export default async function PortfolioPage(props: {
   )) as GetImageListQuery;
 
   return (
-    <main className="py-8 mx-auto max-w-7xl">
+    <main className="py-8 mx-auto max-w-7xl bg-white">
       <h1 className="text-2xl font-bold">Portfolio Page</h1>
       <p className="mt-4 text-lg text-gray-600">
         You are viewing the portfolio for:{" "}
