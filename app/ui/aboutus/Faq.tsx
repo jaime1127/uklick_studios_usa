@@ -40,7 +40,7 @@ const faqs = [
 
 export default function Faq() {
   return (
-    <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 lg:py-40 bg-gray-100">
+    <div className="mx-auto max-w-7xl px-6 py-24 lg:px-8 bg-gray-100">
       <div className="mx-auto max-w-4xl">
         <h2 className="text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
           Frequently asked questions

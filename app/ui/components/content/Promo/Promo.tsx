@@ -23,7 +23,7 @@ export default function Promo({
   image = { url: "", alt: "" },
 }: PromoProps) {
   return (
-    <div className="relative bg-gray-500 mt-4 mb-4">
+    <div className="relative bg-gray-900 mt-4 mb-4">
       <div className="relative h-80 overflow-hidden bg-indigo-600 md:absolute md:left-0 md:h-full md:w-1/3 lg:w-1/2">
         <Image
           alt={image?.alt || ""}
@@ -45,9 +45,9 @@ export default function Promo({
           <div className="mt-8">
             <Link
               href="/book"
-              className="inline-flex rounded-md px-3.5 py-2.5 text-sm font-semibold bg-[#999DA0] text-white shadow-sm hover:bg-indigo-500 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              className="inline-flex rounded-md px-3.5 py-2.5 text-sm font-semibold bg-indigo-600 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
-              Book Your Session Now
+             Book Your Photography Session
             </Link>
           </div>
         </div>

@@ -78,7 +78,7 @@ export default function Carousel({
         <p className="text-lg text-gray-600 mt-2">{description}</p>
         <Link
           href={link?.anchor || "#"}
-          className="whitespace-nowrap font-semibold text-[#999DA0] flex gap-1.5 justify-center underline hover:no-underline"
+          className="whitespace-nowrap font-semibold text-indigo-600 flex gap-1.5 justify-center underline hover:no-underline"
         >
           {link?.label}
         </Link>
@@ -109,7 +109,6 @@ export default function Carousel({
           <SwiperSlide
             className="justify-items-center"
             key={slide?.image?.url || idx}
-            tag="li"
           >
             <Image
               src={slide?.image?.url || ""}

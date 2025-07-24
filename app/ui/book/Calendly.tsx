@@ -34,7 +34,7 @@ export default function Calendly({
         <PopupWidget
           url="https://calendly.com/pfjaime"
           text="Book now"
-          color="#999DA0"
+          color="oklch(51.1% .262 276.966)"
           rootElement={document.getElementById("__next") || document.body}
         />
       ) : null}
