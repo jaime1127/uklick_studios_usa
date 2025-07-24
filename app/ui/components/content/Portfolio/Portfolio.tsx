@@ -13,7 +13,6 @@ export default function Portfolio({
   heading = "",
   description = "",
 }: PortfolioProps) {
-  console.log("collections", collection);
   return (
     <div className="py-4">
       <div className="justify-items-center">

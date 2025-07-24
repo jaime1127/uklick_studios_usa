@@ -43,14 +43,27 @@ export default function Header({
           </Link>
         </div>
         <div className="flex lg:hidden">
-          <button
-            type="button"
-            onClick={() => setMobileMenuOpen(true)}
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
-          >
-            <span className="sr-only">Open main menu</span>
-            <Bars3Icon aria-hidden="true" className="size-6" />
-          </button>
+          {mobileMenuOpen ? (
+            // Close menu button
+            <button
+              type="button"
+              onClick={() => setMobileMenuOpen(false)}
+              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+            >
+              <span className="sr-only">Close main menu</span>
+              <XMarkIcon aria-hidden="true" className="size-6" />
+            </button>
+          ) : (
+            // Open menu button
+            <button
+              type="button"
+              onClick={() => setMobileMenuOpen(true)}
+              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+            >
+              <span className="sr-only">Open main menu</span>
+              <Bars3Icon aria-hidden="true" className="size-6" />
+            </button>
+          )}
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
           {links.map(
@@ -66,17 +79,17 @@ export default function Header({
           )}
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a
+          <Link
             href="/login"
             className="text-sm/6 font-semibold text-white hover:text-gray-300"
           >
             Log in <span aria-hidden="true">&rarr;</span>
-          </a>
+          </Link>
         </div>
       </nav>
       <Dialog
         open={mobileMenuOpen}
-        onClose={setMobileMenuOpen}
+        onClose={() => setMobileMenuOpen(false)} // Ensure this updates the state
         className="lg:hidden"
       >
         <div className="fixed inset-0 z-10" />
@@ -97,7 +110,7 @@ export default function Header({
             </Link>
             <button
               type="button"
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={() => setMobileMenuOpen(false)} // Close the menu on click
               className="-m-2.5 rounded-md p-2.5 text-gray-700"
             >
               <span className="sr-only">Close menu</span>
@@ -117,7 +130,7 @@ export default function Header({
                       key={link.slug || ""}
                       href={link.anchor || ""}
                       className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
-                      onClick={() => setMobileMenuOpen(false)}
+                      onClick={() => setMobileMenuOpen(false)} // Close the menu on link click
                     >
                       {link.label}
                     </Link>
@@ -125,12 +138,13 @@ export default function Header({
                 )}
               </div>
               <div className="py-6">
-                <a
+                <Link
                   href="/login"
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                  onClick={() => setMobileMenuOpen(false)} // Close the menu on link click
                 >
-                  Log in
-                </a>
+                  Log In
+                </Link>
               </div>
             </div>
           </div>

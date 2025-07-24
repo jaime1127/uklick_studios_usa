@@ -26,10 +26,10 @@ export default async function PortfolioPage(props: {
       </p>
       <Link
         href="/portfolio"
-        className="whitespace-nowrap font-semibold text-[#999DA0] inline-flex gap-1.5 underline hover:no-underline"
+        className="whitespace-nowrap font-semibold text-indigo-600 inline-flex gap-1.5 underline hover:no-underline"
       >
         Return to Portfolio Page
-        <ArrowLongRightIcon className="h-6 w-6 text-[#999DA0]" />
+        <ArrowLongRightIcon className="h-6 w-6 text-indigo-600" />
       </Link>
       <ImageList
         sets={

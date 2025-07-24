@@ -49,6 +49,7 @@ export default function ImageList({
                 }
                 className="focus:outline-none"
                 type="button"
+                aria-label={set.asset?.alt || "Open image"}
               >
                 <Image
                   alt={set?.asset?.alt || ""}
