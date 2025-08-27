@@ -19,8 +19,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: { template: "%s | Gracie Wesley Chapel", default: "Gracie Wesley Chapel" },
-  description: "Created by Gracie Wesley Chapel",
+  title: { template: "%s | uKlick Studios USA", default: "uKlick Studios USA" },
+  description: "Created by uKlick Studios USA",
 };
 
 export default async function RootLayout({
